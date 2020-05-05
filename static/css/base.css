@@ -1,0 +1,87 @@
+/* --------------- Headings ---------------*/
+
+.headings{
+    padding-top: 25px;
+    justify-content: center;
+}
+
+.page-container{
+    display: inline-block;
+    height: 70px;
+}
+
+/*-------------- Navigation Bar -------------*/
+
+.honey-pot-logo-image-navbar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.logotext{
+    font-size: 2rem;
+    font-family: 'Pacifico', sans-serif;
+    color: #000;
+}
+
+.logotext:hover{
+    text-decoration: none;
+    color:#BF2604;
+}
+
+.nav-center{
+    flex-direction: row-reverse;
+}
+
+.background-navbar{
+    background-color: #F2A20C;
+}
+
+.nav-link{
+    color: #000;
+    font-size: 1.8rem;
+    font-family: sans-serif;
+}
+
+.nav-link:hover{
+    color:#BF2604;
+}
+
+.navbar-toggler-icon{
+    color: #591902;
+    font-size: 2rem;
+    padding-top: 5px;
+}
+
+/* ----------------- About Page ---------------*/
+
+.apiary_image{
+    background: url('/static/images/apiary.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    
+}
+
+/* ----------------- Media Queries ---------------*/
+
+@media only screen and (max-width: 985px){
+
+.navbar-toggler-icon{
+ padding-top: 8px;
+}
+
+
+}
+
+@media only screen and (max-width: 375px){
+
+.honey-pot-logo-image-navbar{
+    display: none;
+}
+
+
+
+}
+

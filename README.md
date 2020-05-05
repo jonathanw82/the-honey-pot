@@ -10,32 +10,29 @@
 
 
 #### The users goals of this website are:
-* Rate beers and create, update, and delete beers.
-* Clearly displaying Can logo art and credentials.
 * Easy to navigate. 
 
 
 #### The Business potentials of this website are:
-* Selling advertising space to businesses with beer related products.
-* Become an ecommerce site selling the rated products.
+* Selling advertising space to businesses with bee related products.
+* Stock more products and training courses on beekeeping.
 
 
 #### Visitors to this website are searching for:
-* Their favorite beers.
-* Ideas of what to try next Or what to avoid.
-* Where to buy the products others have tried.
+* Infomation on Honey bees and honey.
+* 
 
 
 #### This Website is the best way to help them achieve these things because:
 * Other websites are too cluttered and hard to navigate.
 * The user is able to create a login.
-* The user can create, update, delete and edit their own cans or bottles.
-* The user can rate other cans that they may have had in the past.
-* Other websites fail to have information of places to purchase the product.
+* The user can see there profile.
+* The user can see their past order history.
+* The site owner/admin can create, update, delete products.
 
 
 #### This website is:
-* 
+* Giving education on bees and the honey process.
 * Providing clear artwork and details of each product.
 
 
