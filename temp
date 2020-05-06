@@ -1,3 +1,19 @@
+	<div class="col-sm-4 ">
+						<span>This is honey pot</span>
+					</div>
+					<div class="col-sm-4 ">
+                        <div>copyright &copy <script type="text/javascript"> document.write(new Date().getFullYear()); </script> TheHoneyPot </div>
+					</div>
+					<div class="col-sm-4">
+						<div class="footer-social-icons">
+							<span><a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a></span>
+							<span><a href="https://twitter.com/?lang=en-gb" target="_blank" class="fa fa-twitter"></a></span>
+							<span><a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a></span>
+							<span><a href="https://www.youtube.com/" target="_blank" class="fa fa-youtube"></a></span>
+							<span><a href="https://www.snapchat.com/l/en-gb/" target="_blank" class="fa fa-snapchat"></a></span>
+						</div>
+					</div>
+
 <!DOCTYPE html>
 <html lang="en">
     {% load static %}
@@ -59,3 +75,18 @@
 
 </body>
 </html>
+
+
+.apiary_text_overlay{
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    justify-content: center;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 800;
+    transform: translate(-50%, -50%);
+    font-family: 'Pacifico', sans-serif;
+    font-style: italic;
+    -webkit-text-stroke: 1px #591902;
+}
