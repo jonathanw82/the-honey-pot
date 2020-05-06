@@ -12,6 +12,3 @@ class Products(models.Model):
 
     class Meta:
         verbose_name_plural = 'Products'
-
-
-admin.site.register(Products)

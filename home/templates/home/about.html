@@ -18,9 +18,9 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-12 about-the-apiary-text">
                     <h3>The Apiary</h3>
-                    <p>Our apiary is based in the rolling mediphills in somerset, with a plethora of forage vertually all year round due to the warmer climate, our bees 
+                    <p>Our apiary is based in the rolling mendiphills in somerset, with a plethora of forage vertually all year round due to the warmer climate, our bees 
                     produce award winning seasonal somerset honey. Our highly experienced beekeepers keep a close eye on our bees all year around making shure they have all 
-                    they need if the wether is bad.</p>
+                    they need if the weather is bad.</p>
                 </div>
                 <div class="col-lg-6 beekeeper-image-box">
                     <img class="beekeeper-image" src="{% static '/images/beekeeper.jpg' %}" alt="beekeeper">
@@ -29,4 +29,8 @@
             </div>   
         </div>
          
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'js/about.js' %}"></script>
 {% endblock %}
