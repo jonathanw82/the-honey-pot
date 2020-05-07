@@ -3,26 +3,16 @@
 {% load static %} 
 
 {% block content %}
-<div class="">
-<h1>image</h1>
-<h1>image</h1>
-<h1>image</h1>
-<h1>image</h1>
-<h1>image</h1>
-<h1>image</h1>
-<h1>image</h1>
-
-</div>
 <div class="container">
     <div class="row">
         {% for product in products %}
-        <div class="col-4">
+        <div class="col-md-4">
         <a href="#">
             <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
-                    <p>£{{ product.price }}</p>
+                    <p>£{{ product.price }}</p>{{ product.id }}
                 </div>
             </div>
             </a>
@@ -30,5 +20,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
