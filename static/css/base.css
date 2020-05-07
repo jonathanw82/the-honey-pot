@@ -48,7 +48,15 @@
     padding-top: 5px;
 }
 
-/* ----------------- About Page ---------------*/
+.user-name::first-letter{
+    text-transform: capitalize;
+}
+
+/* ------------------ login page ----------------*/
+
+
+
+/* ----------------- landing page ---------------*/
 
 .apiary_image{
     width: 100%;

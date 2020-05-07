@@ -28,6 +28,7 @@
             </div>   
             <div class="container">
                 <div class="row">
+                    <a class="hidden" name="product-link"></a>
                     {% for product in products %}
                         <div class="col-lg-4 col-sm-6">
                         <a href="#">
@@ -43,7 +44,8 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>   
+        </div>  
+       
 {% endblock %}
 
 {% block postloadjs %}

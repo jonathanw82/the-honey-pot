@@ -1,17 +1,53 @@
-from django.db import models
+{% extends "account/base.html" %} {% load i18n %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
 
-# Create your models here.
-class Products(models.Model):
+{% load static %}
+    
+<div class="empty-div"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>{% trans "Sign In" %}</h1>
+            <p>
+                {% blocktrans %}If you have not created an account yet, then please
+                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+                </p>
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+                <p class="mt-2">
+                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                </p>
+            </form>
+        </div>
+    </div>    
+</div>
+{% endblock %}
 
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='images/')
-    def __str__(self):
-            return self.name
+{% extends "account/base.html" %} {% load i18n %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
 
-    class Meta:
-        verbose_name_plural = 'Products'
-
-
-admin.site.register(Products)
+{% load static %}
+    
+<div class="empty-div"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>{% trans "Sign In" %}</h1>
+            <p>
+                {% blocktrans %}If you have not created an account yet, then please
+                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+                </p>
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+                <p class="mt-2">
+                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                </p>
+            </form>
+        </div>
+    </div>    
+</div>
+{% endblock %}
