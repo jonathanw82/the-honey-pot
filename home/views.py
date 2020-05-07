@@ -7,11 +7,11 @@ def index(request):
 
     products = Products.objects.all()
 
-    context = {
+    product_items = {
         'products': products,
     }
 
-    return render(request, 'home/index.html', context)
+    return render(request, 'home/index.html', product_items)
 
 
 def about(request):

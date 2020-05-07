@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
     'home',
     'products',
     'cart',
@@ -74,6 +74,7 @@ TEMPLATES = [
                 # required by allauth
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'cart.context.cart_contents',
                 'django.contrib.messages.context_processors.messages',
             ],
             'builtins':[
@@ -89,7 +90,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+  #  'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 SITE_ID = 1
@@ -113,7 +114,7 @@ WSGI_APPLICATION = 'the_honey_pot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db1.sqlite3'),
     }
 }
 
