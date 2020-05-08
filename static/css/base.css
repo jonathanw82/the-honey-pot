@@ -4,6 +4,11 @@
     height: 75px;
 }
 
+.empty-div-bottom{
+    display: block;
+    height: 50px;
+}
+
 /*-------------- Navigation Bar -------------*/
 
 .honey-pot-logo-image-navbar{
@@ -52,6 +57,10 @@
     text-transform: capitalize;
 }
 
+.user-name-man{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
 /* -------------- Product info page -------------*/
 
 .product_image_info{
@@ -68,12 +77,15 @@
 }
 
 .product_management_image{
-    max-width: 250px;
+    max-width: 100%;
     max-height: 250px;
+    overflow: hidden;  
 }
 
 .prod_img_box{
-    
+    padding-left: 10 !important;
+    text-align: center;
+    border-right: 1px solid gray;
 }
 
 .prod_man_buttons{
@@ -82,11 +94,16 @@
 }
 
 .prod_admin_table th{
-    width:30%;
+    width:25%;
 } 
 
 .prod_man_box{
     border:1px solid gray;
+    margin-bottom: 4px;
+}
+
+.prod_man_col{
+    margin-bottom:-8px;
 }
 
 /* ----------------- landing page ---------------*/
@@ -172,6 +189,10 @@
     height: auto;
 }
 
+.empty-div-bottom{
+    display: none;
+}
+
 }
 
 @media only screen and (max-width: 985px){
@@ -203,6 +224,10 @@
 
 .about-the-apiary-text h3{
     text-align: center;
+}
+
+.empty-div-bottom{
+    display: block;
 }
 }
 
