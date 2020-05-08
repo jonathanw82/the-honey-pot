@@ -52,13 +52,16 @@
                         {{request.user.username}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {% if request.user.is_superuser %}
+                        <a class="nav-link dropdown-item" href="#">Admin</a>
+                    {% endif %}
                         <a class="nav-link dropdown-item" href="#">Profile</a>
                         <a class="nav-link dropdown-item" href="#">Your Orders</a>
-                        <a class="nav-item nav-link" href="{% url home_logout %}">logout</a>
+                        <a class="nav-item nav-link" href="{% url 'account_logout' %}">logout</a>
                     </div>
                 </div>
             {% else %}
-            <a class="nav-item nav-link"  href="{}">login</a>
+            <a class="nav-item nav-link"  href="{% url 'account_login' %}">login</a>
             {% endif %}
             <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a>
         </div>
