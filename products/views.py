@@ -22,7 +22,13 @@ def add_product(request):
     return render(request, 'products/add_product.html', {'product_form': form})
 
 
-def product_admin(request):
-    """ A view to product admin """
+def all_products_admin(request):
+    """ A view to all products admin """
 
-    return render(request, 'products/product_admin.html')
+    product = Products.objects.all()
+
+    context = {
+        'products': product,
+    }
+
+    return render(request, 'products/all_products_admin.html', context)

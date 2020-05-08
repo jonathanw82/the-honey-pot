@@ -60,6 +60,35 @@
     border: 2px solid black;
 }
 
+/* ----------- Product Management Page ----------*/
+
+.management_header{
+    text-align: -webkit-center;
+    padding-bottom: 5px;
+}
+
+.product_management_image{
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.prod_img_box{
+    
+}
+
+.prod_man_buttons{
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+.prod_admin_table th{
+    width:30%;
+} 
+
+.prod_man_box{
+    border:1px solid gray;
+}
+
 /* ----------------- landing page ---------------*/
 
 .apiary_image{

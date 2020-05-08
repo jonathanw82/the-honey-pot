@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+
+{% block content %}
+<div class="empty-div"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 management_header">
+            <h2>Product Mangement </h2>
+            <h4>You are Logged in as {{request.user.username}}</h4>
+        </div>
+    </div>
+	
+            {% for product in products %}
+            <div class="row prod_man_box">
+            <div class="col-md-4 prod_img_box">
+                <img class="product_management_image" src="{{ product.image.url }}" alt="{{ product.name }}">        
+              </div>
+              <div class="col-md-8"> 
+              <table class="table prod_admin_table table-striped">
+                <tbody>
+                    <tr>
+                    <th scope="row">Product Name: </th>
+                    <td>{{ product.name }}</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Decription: </th>
+                    <td>{{ product.description }}</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Price: </th>
+                    <td>£{{ product.price }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Created On: </th>
+                    <td>{{ product.created }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Last Updated On: </th>
+                    <td>{{ product.updated }}</td>
+                    </tr>
+                     <tr>
+                      <th scope="row"></th>
+                    <td class="prod_man_buttons">
+                    <button type="button" class="btn prod_man_button ">Update</button>
+                    <button type="button" class="btn prod_man_button ">Delete</button>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+                   
+                </div>
+            </div>  
+            {% endfor %}
+	    
+</div>
+{% endblock %}
