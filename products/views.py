@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from .models import Products
 from .forms import AddProductForm
-from datetime import datetime, date
-from django.utils import timezone
+from django.contrib import messages
 
 
 def product_info(request, product_id):
@@ -16,6 +16,7 @@ def product_info(request, product_id):
     return render(request, 'products/product_info.html', context)
 
 
+@login_required
 def add_product(request):
     """ A view to adding a product """
 
@@ -36,6 +37,7 @@ def add_product(request):
     return render(request, 'products/add_product.html', context)
 
 
+@login_required
 def update_product(request, product_id):
     """ A view to adding a product """
     product = get_object_or_404(Products, pk=product_id)
@@ -43,6 +45,8 @@ def update_product(request, product_id):
         form = AddProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Product Updated!')
+            print('I am here!!!!!!!!!!!!!!')
             return redirect('all_products_admin')
         else:
             print('I am not Valid Jon Help!')
@@ -57,6 +61,7 @@ def update_product(request, product_id):
     return render(request, 'products/update_product.html', context)
 
 
+@login_required
 def all_products_admin(request):
     """ A view to all products admin """
 
@@ -68,6 +73,7 @@ def all_products_admin(request):
     return render(request, 'products/all_products_admin.html', context)
 
 
+@login_required
 def delete(request, product_id):
     """ A view to delete products in admin """
 
