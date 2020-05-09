@@ -2,7 +2,7 @@ from django import forms
 from .models import Products
 
 
-class ProductForm(forms.ModelForm):
+class AddProductForm(forms.ModelForm):
 
     class Meta:
         model = Products
@@ -11,8 +11,8 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        for field_name, field in self.fields.items():
-            # print(field.widget)
-            field.widget.attrs['class'] = 'mycustomclass border-primary rounded-0'
-            # field.widget.attrs['placeholder'] = field_name
-            # field.label = False
+        # for field_name, field in self.fields.items():
+        #     # print(field.widget)
+        #     field.widget.attrs['class'] = 'border-primary rounded-0'
+        #     # field.widget.attrs['placeholder'] = field_name
+        #     # field.label = False

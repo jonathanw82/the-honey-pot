@@ -53,7 +53,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {% if request.user.is_superuser %}
-                        <a class="nav-link dropdown-item" href="#">Admin</a>
+                        <a class="nav-link dropdown-item" href="{% url 'all_products_admin' %}">Admin</a>
                     {% endif %}
                         <a class="nav-link dropdown-item" href="#">Profile</a>
                         <a class="nav-link dropdown-item" href="#">Your Orders</a>

@@ -10,6 +10,7 @@
         <div class="col-sm-12 management_header">
             <h2>Product Mangement </h2>
             <div class="user-name-man">You are Logged in as {{request.user.username}}</div>
+            <a  class="btn prod_man_button" href="{% url 'add_product' %}">Add Product</a>
         </div>
     </div>
 	
@@ -20,7 +21,11 @@
               </div>
               <div class="col-md-8 prod_man_col"> 
               <table class="table prod_admin_table table-striped">
-                <tbody>
+                <tbody> 
+                    <tr>
+                    <th scope="row">Product ID: </th>
+                    <td>{{ product.id }}</td>
+                    </tr>
                     <tr>
                     <th scope="row">Product Name: </th>
                     <td>{{ product.name }}</td>
@@ -44,8 +49,8 @@
                      <tr>
                       <th scope="row"></th>
                     <td class="prod_man_buttons">
-                    <button type="button" class="btn prod_man_button ">Update</button>
-                    <button type="button" class="btn prod_man_button ">Delete</button>
+                    <a class="btn prod_man_button" href="{% url 'update_product' product.id %}">Update</a>
+                    <a class="btn prod_man_button_del" href="{% url 'delete' product.id %}">Delete</a>
                     </td>
                     </tr>
                 </tbody>
