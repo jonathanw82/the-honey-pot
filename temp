@@ -1,53 +1,25 @@
-{% extends "account/base.html" %} {% load i18n %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
+  def test_get_update_product(self):
+        item = product.objects.create(name='The Honeypot Item')
+        response = self.client.get(f'/update_product/{product.id}')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/update_product.html')
 
-{% load static %}
-    
-<div class="empty-div"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>{% trans "Sign In" %}</h1>
-            <p>
-                {% blocktrans %}If you have not created an account yet, then please
-                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-                </p>
-                <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-                <p class="mt-2">
-                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-                </p>
-            </form>
-        </div>
-    </div>    
-</div>
-{% endblock %}
+    def test_can_add_product(self):
+        response = self.client.post('/add_product', {'name': 'Test Added Item'})
+        self.assertRedirects(response, 'products/add_product.html')
 
-{% extends "account/base.html" %} {% load i18n %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
+    def test_can_delete_item(self):
+        item = product.objects.create(name='Test Honeypot Item')
+        response = self.client.get(f'/delete/{product.id}')
+        self.assertRedirects(response, 'all_products_admin')
+        existing_items = product.objects.filter(id=product.id)
+        self.assertEqual(len(existing_items), 0)
 
-{% load static %}
-    
-<div class="empty-div"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>{% trans "Sign In" %}</h1>
-            <p>
-                {% blocktrans %}If you have not created an account yet, then please
-                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-                </p>
-                <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-                <p class="mt-2">
-                    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-                </p>
-            </form>
-        </div>
-    </div>    
-</div>
-{% endblock %}
+
+    def test_can_edit_item(self):
+        item = product.objects.create(name='Test honeypot Item')
+        response = self.client.post(f'/update_product/{product.id}',
+                                    {'name': 'Updated Name'})
+        self.assertRedirects(response, 'update_product')
+        updated_item = product.objects.get(id=product.id)
+        self.assertEqual(updated_item.name, 'Updated Name')
