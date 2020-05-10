@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def cart_view(request):
@@ -19,5 +20,5 @@ def add_to_cart(request, item_id):
         cart[item_id] = quantity
 
     request.session['cart'] = cart
-    print(request.session['cart'])
+    messages.success(request, 'Added item to cart!')
     return redirect(redirect_url)

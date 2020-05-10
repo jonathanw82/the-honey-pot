@@ -62,7 +62,7 @@
             {% else %}
             <a class="nav-item nav-link"  href="{% url 'account_login' %}">login</a>
             {% endif %}
-            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a>
+            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a>£{{ grand_total|floatformat:2 }}        
         </div>
   </div>
 </nav>

@@ -11,7 +11,40 @@
         </div>
         <div class="col-md-6">
             {% if cart_items %}
-            <div> address and stuff</div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                    <th>Product Info</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Subtotal</th>
+                    </tr>
+                </tbody>
+                {% for item in cart_items %}
+                    <tr>
+                        <td>
+                            <p>{{ item.product.name }}</p>
+                        </td>
+                         <td>
+                            <p>£{{ item.product.price }}</p>
+                        </td>
+                         <td>
+                            <p>{{ item.quantity }}</p>
+                        </td>
+                        <td>
+                            <p>£{{ item.product.price }}</p>
+                        </td>
+                    <tr>
+                {% endfor %}
+                <tr>
+                    <td>
+                    <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
+                    <h3> Grand Total: £{{ grand_total| floatformat:2 }}</h3>
+
+                    </td>
+                    <td></td>
+                </tr>    
+            </table>                
             {% else %}
             <p>You have not added any items to your cart!</p>
             <a href="{% url 'home' %}">Keep Browsing</a>
