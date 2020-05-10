@@ -16,7 +16,6 @@ def product_info(request, product_id):
     return render(request, 'products/product_info.html', context)
 
 
-@login_required
 def add_product(request):
     """ A view to adding a product """
 
@@ -37,7 +36,6 @@ def add_product(request):
     return render(request, 'products/add_product.html', context)
 
 
-@login_required
 def update_product(request, product_id):
     """ A view to adding a product """
     product = get_object_or_404(Products, pk=product_id)
@@ -61,7 +59,6 @@ def update_product(request, product_id):
     return render(request, 'products/update_product.html', context)
 
 
-@login_required
 def all_products_admin(request):
     """ A view to all products admin """
 

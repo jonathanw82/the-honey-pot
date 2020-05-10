@@ -11,7 +11,18 @@
 
 #### The users goals of this website are:
 * Easy to navigate. 
+* able to login.
+* view there profile and previouse orders.
+* view how long there subscrition has left.
 
+#### The Admin goals of this website are:
+* Easy to navigate. 
+* able to login.
+* view there product list.
+* Create new products.
+* View there produts.
+* Update ther products.
+* Delete Products.
 
 #### The Business potentials of this website are:
 * Selling advertising space to businesses with bee related products.
