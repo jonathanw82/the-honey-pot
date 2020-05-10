@@ -54,7 +54,7 @@
                     {% if request.user.is_superuser %}
                         <a class="nav-link dropdown-item" href="{% url 'all_products_admin' %}">Admin</a>
                     {% endif %}
-                        <a class="nav-link dropdown-item" href="#">Profile</a>
+                        <a class="nav-link dropdown-item" href="{% url 'user_profile' %}">Profile</a>
                         <a class="nav-link dropdown-item" href="#">Your Orders</a>
                         <a class="nav-item nav-link" href="{% url 'account_logout' %}">logout</a>
                     </div>
@@ -69,7 +69,7 @@
     </header>
     {% if messages %}
     <div class="notifications">
-        {% for notification in notifications %}
+        {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
                         {% include 'messages/error_message.html' %}

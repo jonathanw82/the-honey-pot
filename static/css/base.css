@@ -165,6 +165,10 @@
     right: 15px;
 }
 
+.alert_title{
+    color: white;
+}
+
 /* ----------------- Footer ---------------*/
 
 .footer{
