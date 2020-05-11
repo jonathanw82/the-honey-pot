@@ -62,7 +62,13 @@
             {% else %}
             <a class="nav-item nav-link"  href="{% url 'account_login' %}">login</a>
             {% endif %}
-            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a>£{{ grand_total|floatformat:2 }}        
+            
+            {% if cart %} 
+            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-cart-arrow-down"></i> = {{ product_count }}</a>   
+            {% else %}
+            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a> 
+            {% endif %}
+             
         </div>
   </div>
 </nav>
@@ -84,7 +90,6 @@
         {% endfor %}
     </div>      
     {% endif %} 
-    
     
     {% block content %}
     {% endblock %}
@@ -121,7 +126,6 @@
 			</div>		
 	</div>
     
-
     {% block postloadjs %}
         <script> $('.toast').toast('show'); </script>
     {% endblock %}

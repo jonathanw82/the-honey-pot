@@ -61,12 +61,14 @@
     text-transform: capitalize;
     font-size: 1.5rem;
 }
+
 /* -------------- Product info page -------------*/
 
 .product_image_info{
-    width: auto;
-    height: 60%;
+    max-width: 100%;
+    max-height: 6250px;
     border: 2px solid black;
+    overflow: hidden
 }
 
 /* ----------- Product Management Page ----------*/
