@@ -29,7 +29,14 @@
                             <p>£{{ item.product.price }}</p>
                         </td>
                          <td>
-                            <p>{{ item.quantity }}</p>
+                            <form class="form update-form" method="POST" action="">
+                                {% csrf_token %}
+                                <div>
+                                    <input class="form_control" type="number" name="quantity" value="{{ item.quantity }}" min="1" 
+                                        max="50" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <a class="primaryAction" type="submit" href="">Update</a>
+                                </div>
+                            </form>
                         </td>
                         <td>
                             <p>£{{ item.product.price }}</p>
