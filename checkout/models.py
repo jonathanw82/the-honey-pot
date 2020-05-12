@@ -5,7 +5,6 @@ from django.conf import settings
 from products.models import Products
 
 
-
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     # user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
