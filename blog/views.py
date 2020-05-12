@@ -3,7 +3,6 @@ from django.utils import timezone
 from .models import Blog
 from .forms import BlogPostForm
 from django.contrib import messages
-from django.contrib.auth.models import User
 
 
 def get_blogs(request):

@@ -213,7 +213,7 @@ https://www.heroku.com/
 
 ### Credits:
 
-
+The Blog was a mini project from code institute.
 
 
 

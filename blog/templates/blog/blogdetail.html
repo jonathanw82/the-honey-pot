@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-2 col-sm-3 text-center">
                 <a class="story-img" href="#">
-                    <img src="/media/media/blogimage/images/profile.jpg" class="img-circle" alt="blog profile image">
+                    <img src="{{ '/media/blogimage/profile.jpg' }}" class="img-circle" alt="blog profile image">
                 </a>
                 <p><span class="boldtext">Author:</span> {{request.user.username}}</p>
             </div>
@@ -21,7 +21,6 @@
                         <p>{{ blog.content }}</p>
                         <p><span class="boldtext">Published on:</span> {{ blog.published_date }} </p>
                         <p><span class="boldtext">Views:</span> {{blog.views}}</p>
-                        <p><span class="boldtext">Tag:</span> {{ blog.tag }}</p>
                         <a href="{% url 'get_blogs' %}" class="btn btn-default">Back to Blog</a>
                         <a href="{% url 'edit_blog' blog.id %}" class="btn btn-default">Edit Blog</a>
                         <hr>
