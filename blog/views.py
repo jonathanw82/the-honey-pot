@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.utils import timezone
 from .models import Blog
 from .forms import BlogPostForm
@@ -15,7 +15,7 @@ def get_blogs(request):
 
 
 def blog_detail(request, pk):
-    """ A view to return a sigle post based on id """
+    """ A view to return a single post based on id """
     blog = get_object_or_404(Blog, pk=pk)
     blog.views += 1
     blog.save()
@@ -41,3 +41,11 @@ def create_or_edit_blog(request, pk=None):
             'form': form
         }
     return render(request, 'blog/blogpostform.html', context)
+
+
+def delete(request, pk):
+    """ A view to delete products in admin """
+    blog = get_object_or_404(Blog, pk=pk)
+    blog.delete()
+    messages.warning(request, f'Blog Post { blog.title } was deleted!')
+    return redirect(reverse('get_blogs'))

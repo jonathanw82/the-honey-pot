@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib import messages
+from products.models import Products
 
 
 def cart_view(request):
@@ -22,3 +23,20 @@ def add_to_cart(request, item_id):
     request.session['cart'] = cart
     messages.success(request, 'Added item to cart!')
     return redirect(redirect_url)
+
+
+def remove_from_cart(request, item_id):
+    """ A view to remove products in the shopping cart """
+    try:
+        product = get_object_or_404(Products, pk=item_id)
+        cart = request.session.get('cart', {})
+        cart.pop(item_id)
+
+        request.session['cart'] = cart
+        messages.success(request, f'You have removed {product.name} from\
+                                    the cart!')
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=404)

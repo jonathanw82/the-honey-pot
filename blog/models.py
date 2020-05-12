@@ -16,6 +16,8 @@ class Blog(models.Model):
     tag = models.CharField(max_length=30, blank=True, null=True)
     image = models.ImageField(upload_to='blogimage/',
                               blank=True, null=True)
+    profile_pic = models.ImageField(upload_to='blogimage/',
+                              blank=True, null=True)
 
     def __unicode__(self):
         return self.title

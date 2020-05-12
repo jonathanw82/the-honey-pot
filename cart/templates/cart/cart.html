@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}    
 <div class="empty-div"></div>
@@ -28,17 +29,24 @@
                             <p>£{{ item.product.price }}</p>
                         </td>
                         <td>
-                            <p>£{{ item.product.price }}</p>
+                            <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
-                    <tr>
+                        <td>
+                        <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
+                        </td>
+                    </tr>
+                    
                 {% endfor %}
                 <tr>
                     <td>
                     <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
                     <h3> Grand Total: £{{ grand_total| floatformat:2 }}</h3>
-
                     </td>
-                    <td></td>
+                    <td colspan="5" class="text-right">
+                        <a href="{% url 'home' %}">Keep Browsing</a>
+                        <a href="{% url 'checkout' %}">Secure Checkout</a>
+                        
+                    </td>
                 </tr>    
             </table>                
             {% else %}
@@ -48,4 +56,22 @@
         </div>
     </div>    
 </div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+
 {% endblock %}
