@@ -11,6 +11,7 @@ def cart_view(request):
 def add_to_cart(request, item_id):
     """ A view to the products in the shopping cart """
 
+    product = get_object_or_404(Products, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -21,7 +22,8 @@ def add_to_cart(request, item_id):
         cart[item_id] = quantity
 
     request.session['cart'] = cart
-    messages.success(request, 'Added item to cart!')
+    messages.success(request, f'You have successfully added {product.name} to\
+                     the cart!')
     return redirect(redirect_url)
 
 

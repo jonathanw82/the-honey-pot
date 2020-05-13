@@ -3,6 +3,10 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+{% endblock %}
+
 {% block content %}    
 <div class="empty-div"></div>
 <div class="container">
@@ -10,13 +14,14 @@
         <div class="col-sm-12">
             <h1>Your Shopping Cart</h1>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             {% if cart_items %}
             <table class="table">
                 <tbody>
                     <tr>
                     <th>Product Info</th>
                     <th>Price</th>
+                    <th>Qty</th>
                     <th>Subtotal</th>
                     </tr>
                 </tbody>
@@ -29,6 +34,9 @@
                             <p>£{{ item.product.price }}</p>
                         </td>
                         <td>
+                            <p>{{ item.quantity }}</p>
+                        </td>
+                        <td>
                             <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                         <td>
@@ -37,18 +45,15 @@
                     </tr>
                     
                 {% endfor %}
-                <tr>
-                    <td>
+                </table> 
+                
+                <div class="col-sm-12 cart_totals_buttons">
                     <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
                     <h3> Grand Total: £{{ grand_total| floatformat:2 }}</h3>
-                    </td>
-                    <td colspan="5" class="text-right">
-                        <a href="{% url 'home' %}">Keep Browsing</a>
-                        <a href="{% url 'checkout' %}">Secure Checkout</a>
-                        
-                    </td>
-                </tr>    
-            </table>                
+                        <a class="btn btn-secondary"href="{% url 'home' %}">Keep Browsing</a>
+                        <a class="btn btn-secondary"href="{% url 'checkout' %}">Secure Checkout</a>   
+                </div>   
+                           
             {% else %}
             <p>You have not added any items to your cart!</p>
             <a href="{% url 'home' %}">Keep Browsing</a>
