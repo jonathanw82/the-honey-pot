@@ -13,16 +13,17 @@
 * Easy to navigate. 
 * able to login.
 * view there profile and previouse orders.
-* view how long there subscrition has left.
+* Read the blog to keep upto date with what the bees are doing
 
 #### The Admin goals of this website are:
 * Easy to navigate. 
-* able to login.
-* view there product list.
+* Able to login.
+* View there product list.
 * Create new products.
 * View there produts.
 * Update ther products.
 * Delete Products.
+* Create, update & delete there blog posts
 
 #### The Business potentials of this website are:
 * Selling advertising space to businesses with bee related products.
@@ -31,7 +32,7 @@
 
 #### Visitors to this website are searching for:
 * Infomation on Honey bees and honey.
-* 
+* Ability to learn about where there honey comes from.
 
 
 #### This Website is the best way to help them achieve these things because:
@@ -120,11 +121,17 @@ These features may be included in future releases of this application.
 
 
 ## Testing:
-**Test:** 
+**Test:** Check if webhook recieved from account.external_account.created from stripe 
 
-**Result:** 
+**Result:** Recieved Successfully
 
+**Test:** Check if webhook recieved from payment_intent.succeeded
 
+**Result:** Recieved Successfully
+
+**Test:** Check if webhook recieved from payment_intent.payment_failed
+
+**Result:** Recieved Successfully
 
 
 ### Validation Using Jigsaw, Validator, Jshint and pep8
@@ -150,14 +157,14 @@ Tested on four Browsers
 Log into GitHub.
 Then clone this project from GitHub:
 
-Follow this link to the Project's GitHub repository https://github.com/jonathanw82/Can_Share
+Follow this link to the Project's GitHub repository https://github.com/jonathanw82/the-honey-pot
 Under the repository name, click "Clone or download".
 Select clone with HTTPs, copy the clone URL for the repository.
 
 In your local IDE open Git Bash Terminal.
 Change the current working directory to the location where you want the cloned directory to be made.
 Type git clone, and then paste the URL you copied earlier.
-(git clone "https://github.com/USERNAME/REPOSITORY")
+(git clone "https://github.com/jonathanw82/the-honey-pot")
 Press Enter. Your local clone will be created.
 
 Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
@@ -165,7 +172,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 ##### Forking the repository.
 If you would like to take a copy of this repository in its current state, this can be done by forking.
 
-Follow this link to the Project's GitHub repository https://github.com/jonathanw82/Can_Share
+Follow this link to the Project's GitHub repository https://github.com/jonathanw82/the-honey-pot
 
 From the menu items near the top of the page, select Fork.
 On doing so the repository will be added to your own gitHub account. From there you can follow the deployment 
@@ -200,7 +207,7 @@ config Vars in heroku.
 
 Go back to heroku go to settings click reveal config vars, there will be a few things to add here, first setup IP so in the box that says Key type (IP) and in 
 the value box type (0.0.0.0) click add then do the same but type (PORT) and set that to (5000) click add. You will also need to add (MONGO_URI) and the (SECRET_KEY) for this information contact You site developer.
-
+#######################################################################################################################################################################################
 Once all the steps have been taken, click more top right hand side of page and select restart all dynos the application will now be deployed.
 
 If a message pops up stating there may be some down time until the restart has finished click OK.
@@ -213,7 +220,8 @@ https://www.heroku.com/
 
 ### Credits:
 
-The Blog was a mini project from code institute.
+The Blog was a mini project from Code Institute.
+The cart, checkout and stripe tutorials from boutique ado, Code Institute
 
 
 

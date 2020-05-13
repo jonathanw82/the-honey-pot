@@ -1,4 +1,4 @@
-/* Core logic flow this comes from Stripe docs */
+/* Core logic flow this comes from Stripe docs *//* Content followed from Boutique ado CodeInstitute */
 
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
@@ -49,7 +49,32 @@ form.addEventListener('submit', function(ev) {
     stripe.confirmCardPayment(clientSecret,{
         payment_method:{
             card: card,
-        }
+            billing_details: {
+                        name: $.trim(form.full_name.value),
+                        phone: $.trim(form.phone_number.value),
+                        email: $.trim(form.email.value),
+                        address:{
+                            line1: $.trim(form.street_address1.value),
+                            line2: $.trim(form.street_address2.value),
+                            city: $.trim(form.town_or_city.value),
+                            country: $.trim(form.country.value),
+                            county: $.trim(form.county.value),
+                        }
+                    }
+                },
+                shipping: {
+                    name: $.trim(form.full_name.value),
+                    phone: $.trim(form.phone_number.value),
+                    address: {
+                        line1: $.trim(form.street_address1.value),
+                        line2: $.trim(form.street_address2.value),
+                        city: $.trim(form.town_or_city.value),
+                        country: $.trim(form.country.value),
+                        postal_code: $.trim(form.postcode.value),
+                        county: $.trim(form.county.value),
+                    }
+                },
+        
     }).then(function(result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
