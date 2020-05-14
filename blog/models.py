@@ -18,7 +18,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blogimage/',
                               blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:

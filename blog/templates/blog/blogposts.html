@@ -23,6 +23,8 @@
             <div class="card" style="width: 18rem;">
                 {% if blog.image %}
                 <img class="img-blogpost" src="/media/{{ blog.image }}" alt="blog post image">
+                {% else %}
+                <img class="img-blogpost" src="{{ MEDIA_URL }}noimage.png" alt="blog post image">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ blog.title }}</h5>

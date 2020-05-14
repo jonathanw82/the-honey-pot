@@ -3,15 +3,21 @@ from .models import User_Profile
 from .form import User_Profile_form
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def user_profile(request):
     """ A view to show user profile """
 
-    #profile = User_Profile.objects.get(User_Profile, user=request.user)
-    #print(profile)
+    user = User.objects.all()
+    form = User_Profile_form()
+    
+    context = {
+        'user': user,
+        'form': form,
+        }
 
-    return render(request, 'profiles/user_profile.html')
+    return render(request, 'profiles/user_profile.html', context)
 
 
 def update_user_profile(request):

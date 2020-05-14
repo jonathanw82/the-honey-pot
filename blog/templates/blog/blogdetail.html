@@ -12,6 +12,8 @@
             <div class="col-md-4">
                 {% if blog.image %}
                 <img class="img-blogpost" src="/media/{{ blog.image }}" alt="blog post image">
+                {% else %}
+                <img class="img-blogpost" src="{{ MEDIA_URL }}noimage.png" alt="blog post image">
                 {% endif %}
                  <h3>{{ blog.title }}</h3>
             </div>    
