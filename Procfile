@@ -1,1 +1,1 @@
-web: the_honey_pot.wsgi:application
+web: gunicorn the_honey_pot.wsgi:application
