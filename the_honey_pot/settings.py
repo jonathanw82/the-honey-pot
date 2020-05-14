@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'the_honey_pot.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases#notthis
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
