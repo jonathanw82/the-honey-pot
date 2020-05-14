@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, reverse
 from django.contrib import messages
 from products.models import Products
 
@@ -27,9 +27,28 @@ def add_to_cart(request, item_id):
     return redirect(redirect_url)
 
 
+def adjust_cart(request, item_id):
+    """ Adjust the quantity of the specified product
+        to the specified amount """
+    product = get_object_or_404(Products, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    cart = request.session.get('cart', {})
+
+    if quantity > 0:
+        cart[item_id] = quantity
+        messages.success(request, f'Update {product.name} quantity to {cart[item_id]}')
+    else:
+        cart.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your cart')
+
+    request.session['cart'] = cart
+    return redirect(reverse('cart_view'))
+
+
 def remove_from_cart(request, item_id):
     """ A view to remove products in the shopping cart """
     try:
+        print('here')
         product = get_object_or_404(Products, pk=item_id)
         cart = request.session.get('cart', {})
         cart.pop(item_id)
@@ -41,4 +60,4 @@ def remove_from_cart(request, item_id):
 
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(status=404)
+        return HttpResponse(status=500)

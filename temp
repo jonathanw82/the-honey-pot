@@ -1,15 +1,59 @@
-  from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
-from django.views.decorators.http import require_POST
+from django.shortcuts import render, get_object_or_404
+from .models import User_Profile
+from .form import User_Profile_form
 from django.contrib import messages
-from django.conf import settings
-from .forms import OrderForm
-from .models import Order, OrderLineItem
-from products.models import Products
-#from profiles.forms import UserProfileForm
-#from profiles.models import UserProfile
-from cart.context import cart_contents
-#import stripe
-import json
+
+
+def user_profile(request):
+    """ A view to show user profile """
+
+    profile = get_object_or_404(User_Profile, user=request.user)
+    if request.method == 'POST':
+        form = User_profile_form(request.POST)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Your Profile has been updated!')
+        else:
+            messages.error(request, 'Something went wrong please \
+                                        check your form')
+
+    context = {
+        'profile': profile
+    }
+
+    return render(request, 'profiles/user_profile.html', context)
+
+
+
+
+
+<div class="empty-div"></div>
+        <div class="row">
+            <div class="col-md-2 col-sm-3 text-center">
+                <a class="story-img" href="#">
+                    <img src="/media/{{ blog.profile_pic }}" class="img-circle" alt="blog profile image">
+                </a>
+                <p><span class="boldtext">Author:</span> {{request.user.username}}</p>
+            </div>
+            <div class="col-md-10 col-sm-9">
+                {% if blog.image %}
+                <img class="img-blogpost" src="/media/{{ blog.image }}" alt="blog post image">
+                {% endif %}
+             <h3>{{ blog.title }}</h3>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <p>{{ blog.content }}</p>
+                        <p><span class="boldtext">Published on:</span> {{ blog.published_date }} </p>
+                        <p><span class="boldtext">Views:</span> {{blog.views}}</p>
+                        <a href="{% url 'get_blogs' %}" class="btn btn-default">Back to Blog</a>
+                        {% if request.user.is_superuser  %}
+                        <a href="{% url 'edit_blog' blog.id %}" class="btn btn-default">Edit Blog</a>
+                        {% endif %}
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div> 
 
 
 # @require_POST
