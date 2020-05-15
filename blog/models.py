@@ -15,7 +15,7 @@ class Blog(models.Model):
                                           default=timezone.now)
     updated = models.DateTimeField(auto_now=True, blank=True)
     views = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='blogimage/',
+    image = models.ImageField(upload_to='media/blogimage/',
                               blank=True, null=True)
 
     def __str__(self):

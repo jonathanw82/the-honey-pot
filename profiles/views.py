@@ -11,17 +11,17 @@ def user_profile(request):
 
     user = request.user
     logged_in_form = Logged_In_User_Form(instance=user)
-    profileGet = get_object_or_404(User_Profile, user=user)
-    profileform = User_Profile_form(instance=profileGet)
+    profile = get_object_or_404(User_Profile, user=user)
+    profileform = User_Profile_form(instance=profile)
 
     if request.method == 'POST':
-        logged_in_form = Logged_In_User_Form(request.POST, instance=user),
-        profileform = User_Profile_form(request.POST, instance=profileform),
+        logged_in_form = Logged_In_User_Form(request.POST, instance=user)
+        profileform = User_Profile_form(request.POST, instance=profile)
 
         if logged_in_form.is_valid():
             logged_in_form.save()
 
-        if profileform.is_Valid():
+        if profileform.is_valid():
             profileform.save()
 
     context = {

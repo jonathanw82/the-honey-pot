@@ -43,7 +43,7 @@ def create_or_edit_blog(request, pk=None):
     return render(request, 'blog/blogpostform.html', context)
 
 
-def delete(request, pk):
+def blog_delete(request, pk):
     """ A view to delete products in admin """
     blog = get_object_or_404(Blog, pk=pk)
     blog.delete()
