@@ -42,7 +42,7 @@
                                             <button class="decrement-qty btn btn-sm btn-black rounded-0" 
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <span>
-                                                    <i class="fas fa-minus fa-sm"></i>
+                                                    <i class="fas fa-minus-circle fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -54,7 +54,7 @@
                                             <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                 <span>
-                                                    <i class="fas fa-plus fa-sm"></i>
+                                                    <i class="fas fa-plus-circle fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -66,6 +66,7 @@
                             <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                         <td>
+                         <a class="update-link" id=""><small>Update</small></a>
                         <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
                         </td>
                     </tr>
@@ -76,8 +77,8 @@
                 <div class="col-sm-12 cart_totals_buttons">
                     <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
                     <h3> Grand Total: £{{ grand_total| floatformat:2 }}</h3>
-                        <a class="btn btn-secondary"href="{% url 'home' %}">Keep Browsing</a>
-                        <a class="btn btn-secondary"href="{% url 'checkout' %}">Secure Checkout</a>   
+                        <a class="btn btn-secondary" href="{% url 'home' %}">Keep Browsing</a>
+                        <a class="btn btn-secondary" href="{% url 'checkout' %}">Secure Checkout</a>   
                 </div>   
                            
             {% else %}
@@ -90,9 +91,11 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+{% include 'products/includes/quantity_input_change_js.html' %}
 <script>
    // Update quantity on click
-    $('.update-link').click(function(e) {
+       $('.update-link').click(function(e) {
+        console.log('I have been clicked');
         var form = $(this).prev('.update-form');
         form.submit();
     })
@@ -106,7 +109,7 @@
 
         $.post(url, data)
          .done(function() {
-             location.reload();
+            location.reload();
          });
     })
 </script>

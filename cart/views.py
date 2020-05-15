@@ -30,7 +30,8 @@ def add_to_cart(request, item_id):
 def adjust_cart(request, item_id):
     """ Adjust the quantity of the specified product
         to the specified amount """
-    product = get_object_or_404(Products, pk=item_id)
+    print('i have cart')
+    #product = get_object_or_404(Products, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
@@ -47,17 +48,13 @@ def adjust_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
     """ A view to remove products in the shopping cart """
-    try:
-        print('here')
-        product = get_object_or_404(Products, pk=item_id)
-        cart = request.session.get('cart', {})
-        cart.pop(item_id)
 
-        request.session['cart'] = cart
-        messages.success(request, f'You have removed {product.name} from\
-                                    the cart!')
-        return HttpResponse(status=200)
+    print('here')
+    product = get_object_or_404(Products, pk=item_id)
+    cart = request.session.get('cart', {})
+    cart.pop(item_id)
 
-    except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(status=500)
+    request.session['cart'] = cart
+    messages.success(request, f'You have removed {product.name} from\
+                                the cart!')
+    return HttpResponse(status=200)
