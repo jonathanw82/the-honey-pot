@@ -23,7 +23,7 @@
                 <p><span class="boldtext">Views:</span> {{blog.views}}</p>
                 <a href="{% url 'get_blogs' %}" class="btn btn-default">Back to Blog</a>
                 {% if request.user.is_superuser  %}
-                <a href="{% url 'edit_blog' blog.id %}" class="btn btn-default">Edit Blog</a>
+                <a href="{% url 'editblog' blog.id %}" class="btn btn-default">Edit Blog</a>
                 {% endif %}
                 <hr>
             </div>

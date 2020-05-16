@@ -13,7 +13,7 @@
             <h2>The BeeKeeper's Blog</h2>
             <h4>Keeping you up to date with all things our bees have been upto!</h4>
             {% if request.user.is_superuser  %}
-            <a href="{% url 'create' %}" class="btn btn-primary">create</a>
+            <a href="{% url 'createblog' %}" class="btn btn-primary">create</a>
             {% endif %}
          </div>
     </div>

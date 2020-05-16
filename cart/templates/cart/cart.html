@@ -17,24 +17,26 @@
         <div class="col-md-12">
             {% if cart_items %}
             <table class="table">
-                <tbody>
+               <thead>
                     <tr>
-                    <th>Product Info</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Subtotal</th>
+                        <th>Product Info</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Subtotal</th>
+                        
                     </tr>
-                </tbody>
+                </thead>
+                <tbody>
                 {% for item in cart_items %}
                     <tr>
                         <td>
                             <p>{{ item.product.name }}</p>
                         </td>
-                         <td>
+                        <td>
                             <p>£{{ item.product.price }}</p>
                         </td>
                         <td>
-                             <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+                            <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -61,18 +63,19 @@
                                     </div>
                                 </div>
                             </form>
+                            <a class="update-link"><small>Update</small></a>
+                            <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
                         </td>
                         <td>
                             <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                         <td>
-                         <a class="update-link" id=""><small>Update</small></a>
-                        <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
+                            
                         </td>
                     </tr>
-                    
                 {% endfor %}
-                </table> 
+                </tbody>
+            </table> 
                 
                 <div class="col-sm-12 cart_totals_buttons">
                     <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
@@ -95,13 +98,11 @@
 <script>
    // Update quantity on click
        $('.update-link').click(function(e) {
-        console.log('I have been clicked');
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
-        console.log('calling')
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/cart/remove/${itemId}/`;

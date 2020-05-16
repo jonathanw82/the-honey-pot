@@ -30,14 +30,14 @@ def add_to_cart(request, item_id):
 def adjust_cart(request, item_id):
     """ Adjust the quantity of the specified product
         to the specified amount """
-    print('i have cart')
-    #product = get_object_or_404(Products, pk=item_id)
+    product = get_object_or_404(Products, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
     if quantity > 0:
         cart[item_id] = quantity
-        messages.success(request, f'Update {product.name} quantity to {cart[item_id]}')
+        messages.success(request, f'Update {product.name} quanti\
+                                                ty to {cart[item_id]}')
     else:
         cart.pop(item_id)
         messages.success(request, f'Removed {product.name} from your cart')
@@ -49,7 +49,6 @@ def adjust_cart(request, item_id):
 def remove_from_cart(request, item_id):
     """ A view to remove products in the shopping cart """
 
-    print('here')
     product = get_object_or_404(Products, pk=item_id)
     cart = request.session.get('cart', {})
     cart.pop(item_id)

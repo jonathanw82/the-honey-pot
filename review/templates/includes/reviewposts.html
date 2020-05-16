@@ -1,0 +1,18 @@
+
+
+{% block content %}
+    <div class="container">
+    <div class="empty-div"></div>
+        <div class="row">
+            {% for rev in reviews %}
+            <div class="col-md-8">
+                <h5>{{ rev.title}}</h5>
+                <p>{{ rev.content }}</p>
+                <a href="{% url 'edit_review' rev.pk %}" class="btn btn-default">Edit Review</a>
+                <a href="{% url 'review_delete' rev.pk %}" class="btn btn-default">Delete</a>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+    </div>    
+{% endblock %}

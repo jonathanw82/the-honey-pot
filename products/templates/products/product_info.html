@@ -41,13 +41,23 @@
                                 </button>
                             </div>
                         </div>
-                             <input type="submit" value="Add to Cart" class="btn btn-primary">
-                        <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+                        <div class="product_info_buttonbox">
+                            <input type="submit" value="Add to Cart" class="btn btn-primary">
+                            <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+                        </div>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>   
             </div>
 	</div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>What our customers say about this product</h2>
+            <a class="btn btn-primary"href="{% url 'create_review' product.id %}">create review</a>
+            <hr>
+            {% include 'includes/reviewposts.html' %}
+        </div>    
+    </div>
 </div>
 {% endblock %}
 {% block postloadjs %}

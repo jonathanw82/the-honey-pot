@@ -5,21 +5,19 @@ from profiles.models import User_Profile
 from datetime import datetime, date
 
 
-class Blog(models.Model):
-    """ A blog post
+class Review(models.Model):
+    """ A review post
     """
+    user = models.ForeignKey(User_Profile, on_delete=models.CASCADE)
+    product_id = models.CharField(max_length=254)
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(max_length=254)
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(blank=True, null=True,
                                           default=timezone.now)
-    updated = models.DateTimeField(auto_now=True, blank=True)
-    views = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='media/blogimage/',
-                              blank=True, null=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Blog'
+        verbose_name_plural = 'Review'

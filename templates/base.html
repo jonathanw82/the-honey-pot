@@ -4,7 +4,6 @@
     
 <head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatable" content="ie=edge">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -96,14 +95,16 @@
     
     {% block content %}
     {% endblock %}
-
+    <div class="empty-div-bottom"></div>
+</body>    
+<footer>
     <div class="container-fluid footer">
             <div class="row footer-width">
 					<div class="col-sm-4 ">
 						<div class="slogan-footer">Nature at it's best</div>
 					</div>
 				    <div class="col-sm-4 desktop-view">
-                            <div class="copyright-footer" >Copyright &copy <script type="text/javascript"> document.write(new Date().getFullYear()); </script> TheHoneyPot </div>
+                            <div class="copyright-footer" >Copyright &copy; <script> document.write(new Date().getFullYear()); </script> TheHoneyPot </div>
 					</div>
 					<div class="col-sm-4 desktop-view">
 						<div class="footer-social-icons">
@@ -125,10 +126,10 @@
                     </div>
 			</div>
             <div class="col-sm-4 mobile-view">
-                    <div class="copyright-footer" >copyright &copy <script type="text/javascript"> document.write(new Date().getFullYear()); </script> TheHoneyPot </div>
+                    <div class="copyright-footer" >copyright &copy; <script> document.write(new Date().getFullYear()); </script> TheHoneyPot </div>
 			</div>		
 	</div>
-    
+</footer>    
     {% block postloadjs %}
         <script> $('.toast').toast('show'); </script>
     {% endblock %}

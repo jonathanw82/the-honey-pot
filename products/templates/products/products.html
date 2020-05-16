@@ -1,18 +1,20 @@
-
+{% load static %} 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
 
 
         {% for product in products %}
-        <div class="col-md-4">
+        <div class="col-sm-4  product_cards">
         <a href="{% url 'product_info' product.id %}">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                     <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
-                    <p>£{{ product.price }}</p>
+                    <p class="card-heading">£{{ product.price }}</p>
                 </div>
             </div>
             </a>
         </div>
         {% endfor %}
-
 

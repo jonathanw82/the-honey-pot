@@ -10,12 +10,11 @@
             <div class="col-sm-6">
              <form method="POST" action="{% url 'user_profile' %}">
              {% csrf_token %}
-             {{ logged_in_form.as_p }}
-             {{ profileform.as_p }}
-
-
+             {{ logged_in_form| crispy }}
+             {{ profileform|crispy }}
                 <button class="btn btn-secondary" action="submit" >Update</button>
                 </form>
+                {{ user.userprofiles.orders }}
             </div>
         </div>
     </div>

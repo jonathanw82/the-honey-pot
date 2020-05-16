@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from .models import User_Profile
 from .form import User_Profile_form, Logged_In_User_Form
-# from django.contrib import messages
-# from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 
+@login_required
 def user_profile(request):
     """ A view to show user profile """
 
@@ -17,7 +18,7 @@ def user_profile(request):
     if request.method == 'POST':
         logged_in_form = Logged_In_User_Form(request.POST, instance=user)
         profileform = User_Profile_form(request.POST, instance=profile)
-
+        messages.success(request, 'Your profile update was Successful!')
         if logged_in_form.is_valid():
             logged_in_form.save()
 

@@ -95,7 +95,7 @@ class StripeWH_Handler:
                 if order:
                     order.delete()
                 return HttpResponse(content=f'webhook received: {event["type"]} | ERROR: {e}',
-                    status=500)
+                                    status=500)
 
         return HttpResponse(
             content=f'webhook received: {event["type"]} | SUCCESS: Created order in webhook',

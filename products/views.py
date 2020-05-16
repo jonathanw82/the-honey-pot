@@ -14,8 +14,12 @@ def product_info(request, product_id):
     return render(request, 'products/product_info.html', context)
 
 
+@login_required
 def add_product(request):
     """ A view to adding a product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admins can add products.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = AddProductForm(request.POST, request.FILES)
@@ -34,8 +38,13 @@ def add_product(request):
     return render(request, 'products/add_product.html', context)
 
 
+@login_required
 def update_product(request, product_id):
     """ A view to adding a product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admins can edit products.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Products, pk=product_id)
     if request.method == 'POST':
         form = AddProductForm(request.POST, request.FILES, instance=product)
@@ -55,8 +64,13 @@ def update_product(request, product_id):
     return render(request, 'products/update_product.html', context)
 
 
+@login_required
 def all_products_admin(request):
     """ A view to all products admin """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you have no access here.')
+        return redirect(reverse('home'))
+
     product = Products.objects.all()
     context = {
         'products': product,
@@ -67,6 +81,10 @@ def all_products_admin(request):
 @login_required
 def delete(request, product_id):
     """ A view to delete products in admin """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admins can delete products.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Products, pk=product_id)
     product.delete()
     messages.warning(request, f'Product {product.name} was deleted!')
