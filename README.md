@@ -238,6 +238,24 @@ https://tobiasahlin.com/moving-letters/#2
 
 images
 
+product images of jars on a wedding table.
+http://www.cassidycarsonphotography.com/
+
+candle and flower
+Image by Lolame from Pixabay 
+
+owel canddles
+vimar 211821178
+
+Adobestock
+laveder soap
+343003179 aprilante
+
+wax polish
+Amazon
+
+Aipeiry
+Okssi 163828907
 
 Repository Image 
 

@@ -6,7 +6,7 @@
 
 .empty-div-bottom{
     display: block;
-    height: 50px;
+    height: 60px;
 }
 
 /*-------------- Navigation Bar -------------*/
@@ -100,9 +100,6 @@
     font-size: 1.1rem;
 }
 
-.card_row{
-    justify-content: center;
-}
 /* ------------- notifications ------------*/
 
 .notifications{
@@ -200,6 +197,7 @@
 
 .empty-div-bottom{
     display: block;
+    height: 80px;
 }
 }
 
@@ -243,6 +241,10 @@
     display: none;
 }
 
+.empty-div-bottom{
+    height: 90px;
+}
+
 @media only screen and (max-width: 375px){
 .honey-pot-logo-image-navbar{
     display: None; 
@@ -250,7 +252,9 @@
 .beekeeper-image{
     width: 280px;
     height: auto;
-  
+}
+.empty-div-bottom{
+    height: 90px;
 }
 }
 
@@ -266,5 +270,9 @@
 .beekeeper-image{
     width: 250px;
     height: auto;
+}
+
+.empty-div-bottom{
+    height: 80px;
 }
 }

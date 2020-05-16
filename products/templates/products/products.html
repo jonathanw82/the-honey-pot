@@ -3,9 +3,11 @@
     <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
-
+    <div class="container">
+    <div class="row card_row"> 
+        
         {% for product in products %}
-        <div class="col-sm-4  product_cards">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 product_cards">
         <a href="{% url 'product_info' product.id %}">
             <div class="card">
                     <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -17,4 +19,5 @@
             </a>
         </div>
         {% endfor %}
-
+    </div>
+</div>
