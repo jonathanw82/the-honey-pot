@@ -66,12 +66,9 @@
                             <a class="update-link"><small>Update</small></a>
                             <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
                         </td>
-                        <td>
-                            <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                        </td>
-                        <td>
-                            
-                        </td>
+                            <td>
+                                <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            </td>
                     </tr>
                 {% endfor %}
                 </tbody>

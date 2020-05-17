@@ -52,7 +52,7 @@
                     <a class=" nav-link dropdown-toggle user-name" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{request.user.username}}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-menu drop-menu" aria-labelledby="dropdownMenuLink">
                     {% if request.user.is_superuser %}
                         <a class="nav-link dropdown-item" href="{% url 'all_products_admin' %}">Admin</a>
                     {% endif %}
