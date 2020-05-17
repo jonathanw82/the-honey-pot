@@ -1,8 +1,13 @@
-
 from django.test import TestCase
 
 
 class TestViewsblog(TestCase):
+
+    def test_get_blogs(self):
+        response = self.client.get('get_blogs/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blog/blogposts.html')
+
 
     # def test_blog_create(self):
     #     response = self.client.get("/createblog")

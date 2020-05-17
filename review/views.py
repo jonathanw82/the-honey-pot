@@ -10,6 +10,12 @@ from django.contrib.auth.decorators import login_required
 from products.models import Products
 
 
+# def review_back(request, product_id):
+#     review = get_object_or_404(Products, product_id)
+#     print('THIS HERE !!!!!!!!!!!!!!!!!!!!!!!', review)
+#     return redirect('product_info', product_id)
+
+
 @login_required
 def create_review(request, product_id, pk=None):
     """ A view to createing and editing reviews """

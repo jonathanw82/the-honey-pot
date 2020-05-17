@@ -9,8 +9,6 @@ from profiles.models import User_Profile
 
 def product_info(request, product_id):
     """ A view to show individual product details """
-
-    # reviews = Review.objects.filter(User_Profile, user=request.user)
     reviews = Review.objects.filter(product_id=product_id)
     product = get_object_or_404(Products, pk=product_id)
     context = {
