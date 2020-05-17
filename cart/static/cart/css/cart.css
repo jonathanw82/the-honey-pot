@@ -2,3 +2,14 @@
     text-align: end;
 }
 
+.qty_input{
+    max-width: 20%;
+}
+
+.update-link:hover{
+    cursor: pointer;
+}
+
+.remove-item:hover{
+    cursor: pointer;
+}

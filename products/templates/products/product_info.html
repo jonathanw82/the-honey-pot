@@ -51,17 +51,33 @@
             </div>
 	</div>
     <div class="row">
-        <div class="col-sm-12">
-            <h2>What our customers say about this product</h2>
-            <a class="btn btn-primary"href="{% url 'create_review' product.id %}">create review</a>
-            <hr>
-            {% include 'includes/reviewposts.html' %}
-        </div>    
-    </div>
+            <div class="col-sm-12">
+                <hr>
+                <h2>What our customers say about this product</h2>
+                <a class="btn btn-primary" href="{% url 'create_review' product.id %}">create review</a>
+                <hr><div class="container">
+                <div class="row">
+                    {% for review in reviews %}
+                    <div class="col-md-8">
+                    {{ review.user }}
+                    {{ review.title }}
+                    {{ review.content }}
+                    {% if request.user != review.user %}
+                        <a href="{% url 'edit_review' review.pk %}" class="btn btn-default">Edit Review</a>
+                        <a href="{% url 'review_delete' review.pk %}" class="btn btn-default">Delete</a>
+                    {% endif %}    
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>  
+      </div>        
+    </div>  
 </div>
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
+
 {% include 'products/includes/quantity_input_change_js.html' %}
 
 {% endblock %}

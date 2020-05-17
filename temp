@@ -1,3 +1,49 @@
+  @login_required
+def create_or_edit_review(request, product_id, pk):
+    """ A view to createing and editing reviews """
+    print(pk)
+    product = product_id
+    user = request.user.id
+    review = get_object_or_404(Review, pk=pk) if pk else None
+    if request.method == 'POST':
+        form = ReviewPostForm(request.POST, instance=review)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = User_Profile.objects.get(user=user)
+            review.product_id = product
+            review.save()
+            messages.success(request, 'Your review\
+                was Successful!')
+            return redirect('product_info', product_id)
+    else:
+        form = ReviewPostForm(instance=review)
+        context = {
+            'form': form,
+            'product': product,
+        }
+    return render(request, 'review/reviewpostform.html', context)
+  
+  <hr>
+            <h2>What our customers say about this product</h2>
+            <a class="btn btn-primary" href="{% url 'create_review' product.id %}">create review</a>
+            <hr><div class="container">
+            <div class="row">
+                {% for rev in review %}
+                <div class="col-md-8">
+                <!-- {% if rev.pk == product_id %} -->
+                    <h5>{{ rev.title }}</h5>
+                    <p>{{ rev.content }}</p>
+                    <a href="{% url 'edit_review' rev.pk %}" class="btn btn-default">Edit Review</a>
+                    <a href="{% url 'review_delete' rev.pk %}" class="btn btn-default">Delete</a>
+                <!-- {% endif %}     -->
+                <!-- {% if rev.user == request.user %}     -->
+                <!-- {% endif %} -->
+                    <hr>
+                </div>
+            {% endfor %}
+  
+  
+  
   <div class="container">
     <div class="row card_row"> 
         {% for product in products %}

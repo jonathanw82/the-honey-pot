@@ -11,6 +11,9 @@
     padding-top: 20px;
 }
 
+.qty_input{
+    max-width: 10%;
+}
 /* ------------- Product on landing -------------*/
 
 .product_heading{
