@@ -8,7 +8,7 @@ from datetime import datetime, date
 class Review(models.Model):
     """ A review post
     """
-    user = models.ForeignKey(User_Profile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product_id = models.CharField(max_length=254)
     title = models.CharField(max_length=200)
     content = models.TextField(max_length=254)

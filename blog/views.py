@@ -2,15 +2,16 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.utils import timezone
 from .models import Blog
 from .forms import BlogPostForm
-from profiles.models import User_Profile
+#from profiles.models import User_Profile
 from django.contrib import messages
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 
 def get_blogs(request):
     """ A view to get all blog posts"""
-    blogs = Blog.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    blogs = Blog.objects.filter(published_date__lte=timezone.now(
+                                )).order_by('-published_date')
     context = {
         'blogs': blogs
     }

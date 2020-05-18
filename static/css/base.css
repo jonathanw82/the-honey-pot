@@ -9,6 +9,13 @@
     height: 60px;
 }
 
+.textinput{
+    !important;
+}
+
+.login-box{
+    justify-content: center;
+}
 /*-------------- Navigation Bar -------------*/
 
 .honey-pot-logo-image-navbar{
@@ -288,4 +295,5 @@
 .empty-div-bottom{
     height: 80px;
 }
+
 }

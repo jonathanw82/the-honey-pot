@@ -4,6 +4,8 @@ from django.contrib import messages
 from .forms import OrderForm
 from django.views.decorators.http import require_POST
 from .models import Order, OrderLineItem
+from profiles.models import User_Profile
+from profiles.form import User_Profile_form
 from products.models import Products
 from cart.context import cart_contents
 from django.conf import settings
@@ -115,6 +117,23 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    profile = User_Profile.objects.get(user=request.user)
+    order.user_profile = profile
+    order.save()
+
+    if save_info:
+        profile_data = {
+            'phone_number': order.phone_number,
+            'street_address1': order.street_address1,
+            'street_address2': order.street_address2,
+            'town_or_city': order.town_or_city,
+            'postcode': order.postcode,
+            'full_name': order.full_name,
+        }
+        user_profile_form = User_Profile_form(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')

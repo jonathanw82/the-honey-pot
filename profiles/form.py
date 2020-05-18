@@ -15,4 +15,6 @@ class Logged_In_User_Form(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ('username', 'email')
+
+

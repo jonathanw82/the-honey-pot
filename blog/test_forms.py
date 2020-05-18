@@ -10,10 +10,6 @@ class TestBlogPostForm(TestCase):
         self.assertIn('title', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
 
-    # def test_blog_name_is_not_required(self):
-    #     form = BlogPostForm({'title': 'Test this field'})
-    #     self.assertTrue(form.is_valid())
-
     def test_blog_content_is_required(self):
         form = BlogPostForm({'content': ''})
         self.assertFalse(form.is_valid())

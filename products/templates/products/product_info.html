@@ -57,13 +57,12 @@
                 <a class="btn btn-secondary but-style" href="{% url 'create_review' product.id %}">create review</a>
                 <hr><div class="container">
                 <div class="row">
-                    {% for review in product.reviews.all %}
+                    {% for review in reviews %}
                     <div class="col-md-8">
                     {{ review.user }}
-                    {{ request.user }}
                     {{ review.title }}
                     {{ review.content }}
-                    {% if review.user.id == request.user.id %}
+                    {% if review.user == request.user %}
                         <a href="{% url 'edit_review' review.pk %}" class="btn btn-secondary">Edit Review</a>
                         <a href="{% url 'review_delete' review.pk %}" class="btn btn-secondary">Delete</a>
                     {% endif %}    
