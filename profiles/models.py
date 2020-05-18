@@ -35,7 +35,6 @@ def create_or_update_User_Profile(sender, instance, created, **kwargs):
     """
     Create or update the user profile
     """
-    print('I AM IN THE RECEIVER')
     if created:
         User_Profile.objects.create(user=instance)
     # Existing users: just save the profile
