@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from .models import User_Profile
-from .form import User_Profile_form, Logged_In_User_Form
+from .forms import User_Profile_form, Logged_In_User_Form
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
-#from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 
 @login_required
@@ -31,7 +31,7 @@ def user_profile(request):
         'logged_in_form': logged_in_form,
         'profileform': profileform,
         'orders': orders,
-        }
+    }
 
     return render(request, 'profiles/user_profile.html', context)
 

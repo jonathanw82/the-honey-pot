@@ -5,7 +5,7 @@ from .forms import OrderForm
 from django.views.decorators.http import require_POST
 from .models import Order, OrderLineItem
 from profiles.models import User_Profile
-from profiles.form import User_Profile_form
+from profiles.forms import User_Profile_form
 from products.models import Products
 from cart.context import cart_contents
 from django.conf import settings

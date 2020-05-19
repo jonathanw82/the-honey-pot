@@ -44,7 +44,6 @@
 
 
 #### This website is:
-* Giving education on bees and the honey process.
 * Providing clear artwork and details of each product.
 
 
@@ -220,8 +219,7 @@ https://www.heroku.com/
 
 ### Credits:
 
-The Blog was a mini project from Code Institute.
-The cart, checkout and stripe tutorials from boutique ado, Code Institute
+The cart, checkout and stripe tutorials from boutique ado, Code Institute.
 
 
 

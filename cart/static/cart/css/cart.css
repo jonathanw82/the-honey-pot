@@ -2,10 +2,10 @@
     text-align: end;
 }
 
-/* .rule{
-    border-bottom: 1px solid gray;
-} */
-
+.cart-image{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    
 .qty-cart{
     max-width: 20%;
     border-radius: 50px!important;
@@ -37,12 +37,28 @@ input::-webkit-inner-spin-button {
 .item-price{
     text-align: center;
 }
+
+.sub-total{
+    text-align: center;
+}
+
 /*---------- Media query -----------*/
 @media only screen and (max-width: 426px){
 
 .qty_input{
     width: 100%!important;
 }
+.cart-title{
+    text-align: center;
+}
+
+.product{
+    padding-top:4px;
+}
+
+.rule2{
+    border-bottom: 1px solid gray;
+} 
 
 .buton-box{
     text-align: center!important;
@@ -50,8 +66,12 @@ input::-webkit-inner-spin-button {
 
 }    
 
-@media only screen and (max-width: 323px){
-    /* .qty_input{
-        width: 100%;
-    } */
-}    
+@media only screen and (max-width: 320px){
+.cart_totals_buttons{
+    text-align: center;
+}
+
+.but-keep{
+    margin-bottom: 5px;
+}
+}

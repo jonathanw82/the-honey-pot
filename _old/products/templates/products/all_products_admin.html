@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="empty-div"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 management_header">
+            <h2>Product Mangement </h2>
+            <div class="user-name-man">You are Logged in as {{request.user.username}}</div>
+            <a  class="btn prod_man_button" href="{% url 'add_product' %}">Add Product</a>
+        </div>
+    </div>
+	
+            {% for product in products %}
+            <div class="row prod_man_box">
+            <div class="col-md-4 prod_img_box">
+                <img class="product_management_image" src="{{ product.image.url }}" alt="{{ product.name }}">        
+              </div>
+              <div class="col-md-8 prod_man_col"> 
+              <table class="table prod_admin_table table-striped">
+                <tbody> 
+                    <tr>
+                    <th scope="row">Product ID: </th>
+                    <td>{{ product.id }}</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Product Name: </th>
+                    <td>{{ product.name }}</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Decription: </th>
+                    <td>{{ product.description }}</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Price: </th>
+                    <td>£{{ product.price }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Created On: </th>
+                    <td>{{ product.created }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Last Updated On: </th>
+                    <td>{{ product.updated }}</td>
+                    </tr>
+                     <tr>
+                      <th scope="row"></th>
+                    <td class="prod_man_buttons">
+                    <a class="btn prod_man_button" href="{% url 'update_product' product.id %}">Update</a>
+                    <a class="btn prod_man_button_del" href="{% url 'delete' product.id %}">Delete</a>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+                   
+                </div>
+            </div>  
+            {% endfor %}
+	    <div class="empty-div-bottom"></div>
+</div>
+{% endblock %}

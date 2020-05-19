@@ -2,16 +2,12 @@
     height: 100px;
 }
 
-.test{
-    color: red;
+.profile-form{
+    /* width: 20px!important; */
 }
 
-.input-fields-profile{
-    width: 20px;
-    background: red;
-    border: blue;
-}
-
-.inputtext{
-    background: red;
-}
+.form-control:focus{
+    border-color: #5cb85c!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+} 

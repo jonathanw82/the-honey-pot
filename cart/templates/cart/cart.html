@@ -11,23 +11,32 @@
 <div class="empty-div"></div>
 <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 cart-title">
                 <h1>Your Shopping Cart</h1>
+                <hr>
             </div>
         </div>    
         {% if cart_items %}
             <div class="row">
                 {% for item in cart_items %}
-                        <div class="col-sm-3 rule">
-                            <h6>Product:</h6>
+                <div class="col-sm-2 mb-1">
+                            <a href="{% url 'product_info' item.product.id %}">
+                                {% if item.product.image %}
+                                    <img class="w-100 cart-image" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                    <img class="w-100 car-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <h6 class="product">Product:</h6>
                             <p>{{ item.product.name }}</p>
                         </div>
-                        <div class="col-sm-3 rule"> 
+                        <div class="col-sm-2"> 
                             <h6>Item Price:</h6>
-                            <p class="item-price">£{{ item.product.price }}</p>
+                            <span class="item-price">£{{ item.product.price }}</span>
                         </div>    
-                        
-                        <div class="col-sm-3 rule button-box">
+                        <div class="col-sm-3 button-box">
                             <h6>Qty:</h6>
                             <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
                                 {% csrf_token %}
@@ -56,21 +65,22 @@
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link"><small>Update</small></a>
-                            <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
-                            </div>
-                            <div class="col-sm-3 rule">
+                                <a class="update-link"><small>Update</small></a>
+                                <a class="remove-item text-danger" id="remove_{{ item.product.id }}"><small>Remove</small></a>
+                        </div>
+                        <div class="col-sm-2 rule2">
                             <h6>Sub Total:</h6>
-                                <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                            </div>
+                            <span class="sub-total">£{{ item.product.price | calc_subtotal:item.quantity }}</span>
+                                
+                        </div>
                 {% endfor %}
                     </div>
                 
                 <div class="col-sm-12 cart_totals_buttons">
                     <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
                     <h3> Grand Total: £{{ grand_total| floatformat:2 }}</h3>
-                        <a class="btn btn-secondary" href="{% url 'home' %}">Keep Browsing</a>
-                        <a class="btn btn-secondary" href="{% url 'checkout' %}">Secure Checkout</a>   
+                        <a class="btn btn-secondary but-keep" href="{% url 'home' %}">Keep Browsing</a>
+                        <a class="btn btn-secondary but-checkout" href="{% url 'checkout' %}">Secure Checkout</a>   
                 </div>            
         {% else %}
             <p>You have not added any items to your cart!</p>

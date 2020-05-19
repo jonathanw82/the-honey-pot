@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+
+{% block content %}
+<div class="empty-div"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                        <h1>Update Product</h1>`
+                <form class="update_products" method="POST" action="{% url 'update_product' product_id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form| crispy }}
+            
+                    <button class="primaryAction" type="submit" href="{% url 'all_products_admin' %}">Done</button>
+                </form>
+            </div> 
+		</div>
+    </div>
+
+{% endblock %}
