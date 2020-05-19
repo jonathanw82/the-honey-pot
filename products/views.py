@@ -4,7 +4,6 @@ from .models import Products
 from review.models import Review
 from .forms import AddProductForm
 from django.contrib import messages
-# from profiles.models import User_Profile
 
 
 def product_info(request, product_id):
