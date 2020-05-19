@@ -47,7 +47,7 @@ def createblog_or_editblog_blog(request, pk=None):
     else:
         form = BlogPostForm(instance=blog)
         context = {
-            'form': form
+            'form': form,
         }
     return render(request, 'blog/blogpostform.html', context)
 

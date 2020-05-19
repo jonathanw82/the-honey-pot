@@ -22,6 +22,19 @@
     font-weight: bold;
 }
 
+.buttons-click{
+    background: orange!important;
+    color:black!important;
+}
+
+.buttons-click:hover{
+    border: 1px solid black!important;
+}
+
+.btn-danger:hover{
+    border: 1px solid black!important;
+}
+
 /* ----------------- Media Queries ---------------*/
 
 @media only screen and (max-width: 768px){

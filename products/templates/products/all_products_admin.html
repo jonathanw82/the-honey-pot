@@ -7,13 +7,14 @@
 
 
 {% block content %}
-<div class="empty-div"></div>
+<div class="empty-div" id="top"></div>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 management_header">
             <h2>Product Mangement </h2>
             <div class="user-name-man">You are Logged in as {{request.user.username}}</div>
-            <a  class="btn prod_man_button" href="{% url 'add_product' %}">Add Product</a>
+            <a  class="btn btn-info buttons-click" href="{% url 'add_product' %}">Add Product</a>
+            <a  class="btn btn-info buttons-click" href="#bottom"><i class="fas fa-arrow-down"></i> Go to bottom</a>
         </div>
     </div>
 	
@@ -52,16 +53,21 @@
                      <tr>
                       <th scope="row"></th>
                     <td class="prod_man_buttons">
-                    <a class="btn prod_man_button" href="{% url 'update_product' product.id %}">Update</a>
-                    <a class="btn prod_man_button_del" href="{% url 'delete' product.id %}">Delete</a>
+                    <a class="btn btn-info buttons-click" href="{% url 'update_product' product.id %}">Update</a>
+                    <a class="btn btn-info  btn-danger" href="{% url 'delete' product.id %}">Delete</a>
                     </td>
                     </tr>
                 </tbody>
                 </table>
-                   
                 </div>
             </div>  
             {% endfor %}
-	    <div class="empty-div-bottom"></div>
+            <div class="row">
+                <div class="col-sm-12 prod_man_buttons">
+                    <a  class="btn btn-info buttons-click" href="{% url 'add_product' %}">Add Product</a>
+                    <a  class="btn btn-info buttons-click" id="bottom" href="#top"><i class="fas fa-arrow-up"></i> Go to Top</a>
+                </div>
+            </div>
+	    <div class="empty-div-bottom-admin"></div>
 </div>
 {% endblock %}

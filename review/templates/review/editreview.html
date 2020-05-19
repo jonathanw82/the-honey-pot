@@ -2,7 +2,7 @@
 
 {% load static %} 
 {% block extra_css %}
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{% static 'review/css/review.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
-            <button type="submit" class="btn btn-info">Done</button>
+            <button type="submit" class="btn btn-info buttons-click">Done</button>
         </form>
     </div>
 {% endblock %}

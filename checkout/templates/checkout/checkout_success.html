@@ -12,11 +12,19 @@
         <div class="row">
             <div class="col-sm-12">
                 {% if from_user_profile %}
-                    <h1>Order History!</h1>
-                    <p>The details of your order are below. A confirmation email will be sent to {{ order.email }}</p>
+                    <h1 class="page-title">Order History!</h1>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="sub-title">The details of your order are below. <br> A confirmation email will be sent to {{ order.email }}</div> 
+                        </div>    
+                    </div>
                 {% else %}
-                    <h1>Thank You!</h1>
-                    <p>The details of your order are below. A confirmation email will be sent to {{ order.email }}</p>
+                    <h1 class="page-title">Thank You!</h1>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="sub-title">The details of your order are below. <br> A confirmation email will be sent to {{ order.email }}</div> 
+                        </div>    
+                    </div>
                 {% endif %}
             </div>
         </div>
@@ -27,12 +35,12 @@
                     <tbody>
                     
                          <tr>
-                            <th scope="row"><h5>Items:</h5></th>
+                            <th scope="row" class="heading">Items:</th>
                             <td></td>
                         </tr>
                          <tr>
                             <th scope="row">Order Number:</th>
-                            <td>{{ order.order_number }}</td>
+                            <td class="order-number">{{ order.order_number }}</td>
                         </tr>
                          <tr>
                             <th scope="row">Date:</th>
@@ -46,14 +54,14 @@
                             {% endfor %}
                          <tr>
                             <th scope="row">Total:</th>
-                            <td>{{ order.order_total  }}</td>
+                            <td>£{{ order.order_total  }}</td>
                         </tr>
                         <tr>
                             <th scope="row">Grand Total:</th>
-                            <td>{{ order.grand_total  }}</td>
+                            <td>£{{ order.grand_total  }}</td>
                         </tr>
                         <tr>
-                            <th><h5>Delivery Details:</h5></th>
+                            <th scope ="row" class="heading">Delivery:</th>
                             <td></td>
                         </tr>    
                          <tr>
@@ -95,12 +103,12 @@
             </div>
         </div>
         <div class="row">
-             <div class="col-sm-6">
+             <div class="col-sm-12 bottom-details">
+                <div>Dont Forget To Checkout Our Beekeepers Blog For Updates On Our Bees</div>
+                <a class="btn btn-info buttons-click" href="{% url 'get_blogs' %}">Blog!</a>
             {% if from_user_profile %}
-                <a class="btn btn-secondary" href="{% url 'user_profile' %}">Back</a>
+                <a class="btn btn-info buttons-click" href="{% url 'user_profile' %}">Back</a>
             {% endif %}
-                <span>Dont Forget To Checkout Our Beekeepers Blog For Updates On Our Bees</span>
-                <a class="btn btn-secondary" href="{% url 'get_blogs' %}">Blog!</a>
             </div>
         </div> 
 </div>  

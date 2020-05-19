@@ -110,23 +110,6 @@
     border-right: 1px solid gray;
 }
 
-.prod_man_buttons{
-    text-align: right;
-    padding-bottom: 5px;
-}
-
-.prod_man_button_del{
-    color: red !important;
-}
-
-.prod_man_button_del:hover{
-    border:1px solid red !important;
-}
-
-.prod_man_button:hover{
-    border:1px solid gray !important;
-}
-
 .prod_admin_table th{
     width:25%;
 } 
@@ -136,10 +119,26 @@
     margin-bottom: 4px;
 }
 
+.prod_man_buttons{
+    text-align: center;
+}
+
 .prod_man_col{
     margin-bottom:-8px;
 }
 
+.btn-danger:hover{
+    border: 1px solid black!important;
+}
+
+.buttons-click{
+    background: orange!important;
+    color:black!important;
+}
+
+.buttons-click:hover{
+    border: 1px solid black!important;
+}
 
 /* ----------------- Media Queries ---------------*/
 
@@ -180,7 +179,5 @@
     max-width: 20%;
 }
 
-.empty-div-bottom{
-    
-}
+
 }
