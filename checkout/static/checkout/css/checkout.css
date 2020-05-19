@@ -49,4 +49,22 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
+th{
+    max-width:200px;
+    padding: 5px; 
+}
 
+td{
+    width:300px;
+    text-align: right;
+    padding: 5px;
+}
+
+.border-table{
+    border: 2px solid black;
+    max-width: 80%;
+}
+
+.table-center{
+    text-align: -webkit-center;
+}

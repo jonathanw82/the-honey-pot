@@ -21,41 +21,41 @@
             </div>
         </div>
          <div class="row">
-            <div class="col-sm-12">
-                <h5>Items:</h5>
-                <table class="table">
+            <div class="col-sm-12 table-center">
+                
+                <table class="table border-table">
                     <tbody>
+                    
+                         <tr>
+                            <th scope="row"><h5>Items:</h5></th>
+                            <td></td>
+                        </tr>
                          <tr>
                             <th scope="row">Order Number:</th>
                             <td>{{ order.order_number }}</td>
                         </tr>
                          <tr>
-                            <th scope="row">Order Date:</th>
+                            <th scope="row">Date:</th>
                             <td>{{ order.date }}</td>
                         </tr>
-                         <tr>
-                            <th scope="row">Order Details:</th>
                             {% for item in order.lineitems.all %}
-                            <td> {{ item.product.name }}</td>
-                            <td>{{ item.quantity }} </td>
-                            <td>@ £{{ item.product.price }} each</td>
-                            {% endfor %}
-                        </tr>
                          <tr>
-                            <th scope="row">Order Total:</th>
+                            <th scope="row">Details:</th>
+                            <td> {{ item.product.name }}    ({{ item.quantity }} @ £{{ item.product.price }} each) </td>
+                        </tr>
+                            {% endfor %}
+                         <tr>
+                            <th scope="row">Total:</th>
                             <td>{{ order.order_total  }}</td>
                         </tr>
                         <tr>
                             <th scope="row">Grand Total:</th>
                             <td>{{ order.grand_total  }}</td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
-             <div class="col-sm-12">
-                <h5>Delivery Details:</h5>
-                     <table class="table">
-                    <tbody>
+                        <tr>
+                            <th><h5>Delivery Details:</h5></th>
+                            <td></td>
+                        </tr>    
                          <tr>
                             <th scope="row">Full Name:</th>
                             <td>{{ order.full_name }}</td>
@@ -74,19 +74,19 @@
                             <th scope="row">County:</th>
                             <td>{{ order.county }}</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <th scope="row">Town or City:</th>
                             <td>{{ order.town_or_city }}</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <th scope="row">Country:</th>
                             <td>{{ order.country }}</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <th scope="row">Postcode:</th>
                             <td>{{ order.postcode }}</td>
                         </tr>
-                           <tr>
+                        <tr>
                             <th scope="row">Phone Number:</th>
                             <td>{{ order.phone_number }}</td>
                         </tr>
