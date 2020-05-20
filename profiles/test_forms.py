@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .form import User_Profile_form
+from .forms import User_Profile_form
 
 
 class TestProfilePostForm(TestCase):
@@ -8,25 +8,29 @@ class TestProfilePostForm(TestCase):
         form = User_Profile_form({'full_name': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('full_name', form.errors.keys())
-        self.assertEqual(form.errors['full_name'][0], 'This field is required.')
+        self.assertEqual(form.errors['full_name'][0],
+                         'This field is required.')
 
     def test_profile_street1_is_required(self):
         form = User_Profile_form({'street_address1': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('street_address1', form.errors.keys())
-        self.assertEqual(form.errors['street_address1'][0], 'This field is required.')
+        self.assertEqual(form.errors['street_address1'][0],
+                         'This field is required.')
 
     def test_profile_street2_is_required(self):
         form = User_Profile_form({'street_address2': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('street_address2', form.errors.keys())
-        self.assertEqual(form.errors['street_address2'][0], 'This field is required.')
+        self.assertEqual(form.errors['street_address2'][0],
+                         'This field is required.')
 
     def test_profile_town_is_required(self):
         form = User_Profile_form({'town_or_city': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('town_or_city', form.errors.keys())
-        self.assertEqual(form.errors['town_or_city'][0], 'This field is required.')
+        self.assertEqual(form.errors['town_or_city'][0],
+                         'This field is required.')
 
     def test_profile_county_is_required(self):
         form = User_Profile_form({'county': ''})
@@ -38,7 +42,8 @@ class TestProfilePostForm(TestCase):
         form = User_Profile_form({'phone_number': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('phone_number', form.errors.keys())
-        self.assertEqual(form.errors['phone_number'][0], 'This field is required.')
+        self.assertEqual(form.errors['phone_number'][0],
+                         'This field is required.')
 
     def test_profile_dob_is_required(self):
         form = User_Profile_form({'dob': ''})
