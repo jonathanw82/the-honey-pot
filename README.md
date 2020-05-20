@@ -136,7 +136,7 @@ These features may be included in future releases of this application.
 ### Validation Using Jigsaw, Validator, Jshint and pep8
 | Page                      | Result   | Any Errors                                     |
 | :------------             | :------- | :--------------------------------------------- |
-| app.py                    | Pass     |  No Errors                                     |
+| index.html                    | Pass     |  No Errors                                     |
 
 
 

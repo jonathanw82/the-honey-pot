@@ -1,0 +1,13 @@
+.empty-div-profile{
+    height: 100px;
+}
+
+.profile-form{
+    /* width: 20px!important; */
+}
+
+.form-control:focus{
+    border-color: #5cb85c!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+} 

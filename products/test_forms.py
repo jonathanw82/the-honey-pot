@@ -23,3 +23,7 @@ class TestProductsPostForm(TestCase):
         self.assertIn('price', form.errors.keys())
         self.assertEqual(form.errors['price'][0],
                          'This field is required.')
+
+    def test_fields_are_explicit_in_form_metaclass(self):
+        form = AddProductForm()
+        self.assertEqual(form.Meta.fields, ('__all__'))
