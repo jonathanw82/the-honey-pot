@@ -140,6 +140,43 @@
     border: 1px solid black!important;
 }
 
+.add-product-form{
+    border-radius: 10px!important;
+    width: 80%!important;
+    
+}
+/* ------------------- Reviews ------------------*/
+.review-header{
+    text-align: center;
+}
+
+.review-sub-heading{
+    font-weight: 600;
+}
+
+.header-text{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.review-container{
+    border: 1px solid gray;
+}
+
+.buttons-review{
+    text-align: right;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
+
+.empty-bottom-div{
+    height: 50px;
+}
+
+.review-content{
+    word-wrap: break-word;
+}
+
 /* ----------------- Media Queries ---------------*/
 
 @media only screen and (max-width: 975px){
@@ -152,7 +189,13 @@
     max-height: 6250px;
 }
 
+.add-product-form{
+    width: 100%!important;
+}
 
+.title-edit-page{
+    text-align: center;
+}
 }
 
 /* ----------------- Media Queries ---------------*/
@@ -178,6 +221,8 @@
 .qty_input{
     max-width: 20%;
 }
-
-
+.buttons-review{
+    padding-top: 5px;
+    text-align: center;
+}
 }

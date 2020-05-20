@@ -79,8 +79,8 @@
                 <div class="col-sm-12 cart_totals_buttons">
                     <h4> Sub Total: £{{ total| floatformat:2 }} </h4>
                     <h3> Grand Total: £{{ grand_total| floatformat:2 }}</h3>
-                        <a class="btn btn-secondary but-keep" href="{% url 'home' %}">Keep Browsing</a>
-                        <a class="btn btn-secondary but-checkout" href="{% url 'checkout' %}">Secure Checkout</a>   
+                        <a class="btn btn-secondary but-keep buttons-click" href="{% url 'home' %}"><i class="fas fa-chevron-circle-left"></i> Keep Browsing</a>
+                        <a class="btn btn-secondary but-checkout buttons-click" href="{% url 'checkout' %}"><i class="fas fa-cart-arrow-down"></i> Secure Checkout</a>   
                 </div>            
         {% else %}
             <p>You have not added any items to your cart!</p>

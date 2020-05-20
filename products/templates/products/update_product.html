@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
 {% load static %} 
-
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="empty-div"></div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                        <h1>Update Product</h1>`
+                    <div class="title-edit-page">
+                        <h1>Update Product</h1>
+                    </div>
                 <form class="update_products" method="POST" action="{% url 'update_product' product_id %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form| crispy }}
             
-                    <button class="primaryAction" type="submit" href="{% url 'all_products_admin' %}">Done</button>
+                    <button class="btn btn-info buttons-click" type="submit" href="{% url 'all_products_admin' %}">Done</button>
                 </form>
             </div> 
 		</div>

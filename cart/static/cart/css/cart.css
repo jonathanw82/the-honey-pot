@@ -42,6 +42,20 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
+.buttons-click{
+    background: orange!important;
+    color:black!important;
+}
+
+.buttons-click:hover{
+    border: 1px solid black!important;
+}
+
+.but-checkout,
+.but-keep{
+    font-weight: 700!important;
+}
+
 /*---------- Media query -----------*/
 @media only screen and (max-width: 426px){
 

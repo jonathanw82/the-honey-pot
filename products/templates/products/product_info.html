@@ -51,28 +51,29 @@
             </div>
 	</div>
     <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 review-header">
                 <hr>
-                <h2>What our customers say about this product</h2>
-                <a class="btn btn-secondary buttons-click" href="{% url 'create_review' product.id %}">create review</a>
-                <hr><div class="container">
-                <div class="row">
-                    {% for review in reviews %}
-                    <div class="col-md-8">
-                    {{ review.user }}
-                    {{ review.title }}
-                    {{ review.content }}
+                    <p class="header-text">What our customers say about this product</p>
+                    <a class="btn btn-secondary buttons-click" href="{% url 'create_review' product.id %}">create review</a>
+                <hr>
+            </div> 
+    </div> 
+        <div class="row"> 
+            {% for review in reviews %}
+            <div class="col-md-12 ">
+            <div class="review-sub-heading">Review: {{ review.title }}</div>
+            <span class="review-content">{{ review.content }} </span>
+                <div class="buttons-review">
                     {% if review.user == request.user %}
-                        <a href="{% url 'edit_review' review.pk %}" class="btn btn-secondary buttons-click">Edit Review</a>
-                        <a href="{% url 'review_delete' review.pk %}" class="btn btn-secondary buttons-click">Delete</a>
-                    {% endif %}    
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>  
-        </div>        
-    </div>  
+                        <a href="{% url 'edit_review' review.pk %}" class="btn btn-secondary btn-sm buttons-click">Edit Review</a>
+                        <a href="{% url 'review_delete' review.pk %}" class="btn btn-danger btn-sm buttons-click">Delete</a>
+                    {% endif %} 
+                </div> 
+            </div>
+        {% endfor %}       
+        </div>   
 </div>
+<div class="empty-bottom-div"></div> 
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}

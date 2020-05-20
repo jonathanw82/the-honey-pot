@@ -8,6 +8,7 @@
 {% block content %}
 <div class="empty-div"></div>
     <div class="container">
+        <div class="col-sm-12">
         <h1>Blog Post</h1>   
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
@@ -15,5 +16,6 @@
             <button type="submit" class="btn btn-info buttons-click">Save</button>
             <a class="btn btn-info buttons-click" href="{% url 'get_blogs' %}">Back</a>
         </form>
+        </div>
     </div>
 {% endblock %}

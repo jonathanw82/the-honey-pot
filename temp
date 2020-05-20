@@ -1,3 +1,47 @@
+  <div class="row">
+                
+                    {% for review in reviews %}
+                        <div class="col-md-8 ">
+                        <h6>{{ review.user }}</h6>
+                        <span>{{ review.title }}</span>
+                        <span class="review-content">{{ review.content }} </span>
+                        </div>
+                        <div class="col-md-4 ">
+                            <div class="buttons-review">
+                                {% if review.user == request.user %}
+                                    <a href="{% url 'edit_review' review.pk %}" class="btn btn-secondary btn-sm buttons-click">Edit Review</a>
+                                    <a href="{% url 'review_delete' review.pk %}" class="btn btn-secondary btn-sm buttons-click">Delete</a>
+                                {% endif %} 
+                            </div>
+                        </div>   
+                    {% endfor %}      
+                </div>
+ 
+ 
+ 
+ 
+ <div class="col-sm-12">
+                <hr>
+                <h2>What our customers say about this product</h2>
+                <a class="btn btn-secondary buttons-click" href="{% url 'create_review' product.id %}">create review</a>
+                <hr><div class="container">
+                <div class="row">
+                    {% for review in reviews %}
+                    <div class="col-md-8">
+                    {{ review.user }}
+                    {{ review.title }}
+                    {{ review.content }}
+                    {% if review.user == request.user %}
+                        <a href="{% url 'edit_review' review.pk %}" class="btn btn-secondary btn-sm buttons-click">Edit Review</a>
+                        <a href="{% url 'review_delete' review.pk %}" class="btn btn-secondary btn-sm buttons-click">Delete</a>
+                    {% endif %}    
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>  
+        </div>  
+
+
 
 
 
