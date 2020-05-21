@@ -143,8 +143,14 @@
 .add-product-form{
     border-radius: 10px!important;
     width: 80%!important;
-    
 }
+
+#div_id_image{
+    max-width: 500px!important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 /* ------------------- Reviews ------------------*/
 .review-header{
     text-align: center;

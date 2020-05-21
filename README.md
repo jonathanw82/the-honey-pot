@@ -132,6 +132,12 @@ These features may be included in future releases of this application.
 
 **Result:** Recieved Successfully
 
+## Bugs & ongoign fixes
+* On the chrispy forms image input i have yet to find a way to style it in the next release i will have styled these buttons also.
+* The sign up form atomatically auto focuses on user name instead of email.
+* the product admin page on smaller screens is not quite a contrained as i would prefer however it does not affect the usabillity of the page just rather athetics.
+
+
 
 ### Validation Using Jigsaw, Validator, Jshint and pep8
 | Page                      | Result   | Any Errors                                     |

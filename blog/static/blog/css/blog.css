@@ -8,9 +8,14 @@
     border-radius: 10px!important;
 }
 
-input#file-upload-button{
-    background: red!important;
-    
+#div_id_image{
+    max-width: 500px!important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#div_id_published_date{
+    max-width: 500px!important;
 }
 
 .superuser-but{
@@ -20,11 +25,18 @@ input#file-upload-button{
 .card-text{
     text-align: -webkit-center;
 }
+
 .card{
     margin-top: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .img-blogpost{
+    height: 300px;
+    width: auto;
+}
+
+.img-blogpost-read{
     height: 300px;
     width: auto;
 }
@@ -42,13 +54,50 @@ input#file-upload-button{
     border: 1px solid black!important;
 }
 
+.buttons-click1{
+    background: orange!important;
+    color:black!important;
+}
+
 .btn-danger:hover{
     border: 1px solid black!important;
 }
 
-/* ----------------- Media Queries ---------------*/
+/* --------=--------- blog post --------==-------*/
 
+.empty-div-top{
+    height: 80px;
+}
+
+.blog-image-blog{
+  text-align: center;
+}
+/* ----------------- Media Queries ---------------*/
 @media only screen and (max-width: 768px){
 
+#div_id_image{
+    max-width: 450px!important;
+}
+}
 
+@media only screen and (max-width: 425px){
+
+.blog-form{
+    width: 100%!important;
+    }
+
+.blog-info{
+    text-align: center;
+}
+
+.img-blogpost-read{
+  max-height: 285px;
+    width: auto;
+}
+
+#div_id_image{
+    max-width: 200px!important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
 }

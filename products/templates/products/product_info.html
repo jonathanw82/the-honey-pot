@@ -42,8 +42,11 @@
                             </div>
                         </div>
                         <div class="product_info_buttonbox">
-                            <input type="submit" value="Add to Cart" class="btn btn-secondary buttons-click">
-                            <a href="{% url 'home' %}" class="btn btn-secondary buttons-click">Back</a>
+                            <input type="submit" value="Add to Cart" class="btn btn-info buttons-click">
+                            <a href="{% url 'home' %}" class="btn btn-info buttons-click">Back</a>
+                            {% if cart %}
+                            <a href="{% url 'cart_view' %}" class="btn btn-info shopping-cart-link buttons-click"><i class="fas fa-cart-arrow-down"></i> = {{ product_count }}</a>
+                            {% endif %}
                         </div>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -54,7 +57,7 @@
             <div class="col-sm-12 review-header">
                 <hr>
                     <p class="header-text">What our customers say about this product</p>
-                    <a class="btn btn-secondary buttons-click" href="{% url 'create_review' product.id %}">create review</a>
+                    <a class="btn btn-info buttons-click" href="{% url 'create_review' product.id %}">create review</a>
                 <hr>
             </div> 
     </div> 
