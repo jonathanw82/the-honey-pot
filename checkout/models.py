@@ -1,7 +1,6 @@
 from django.db import models
 import uuid
 from django.db.models import Sum
-from django.conf import settings
 from products.models import Products
 from profiles.models import User_Profile
 from django_countries.fields import CountryField

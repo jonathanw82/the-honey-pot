@@ -4,7 +4,6 @@ from .forms import User_Profile_form, Logged_In_User_Form
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
-# from django.contrib.auth.models import User
 
 
 @login_required

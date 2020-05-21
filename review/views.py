@@ -3,7 +3,6 @@ from .models import Review
 from .forms import ReviewPostForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from products.models import Products
 
 
 @login_required

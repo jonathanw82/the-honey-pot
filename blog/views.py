@@ -2,9 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.utils import timezone
 from .models import Blog
 from .forms import BlogPostForm
-#from profiles.models import User_Profile
 from django.contrib import messages
-#from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 
@@ -52,12 +50,12 @@ def createblog_or_editblog_blog(request, pk=None):
     return render(request, 'blog/blogpostform.html', context)
 
 
-# @login_required
+@login_required
 def blog_delete(request, pk):
     """ A view to delete products in admin """
-    # if not request.user.is_superuser:
-    #     messages.error(request, 'Sorry, only site admin can delete blogs.')
-    #     return redirect(reverse('home'))
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admin can delete blogs.')
+        return redirect(reverse('home'))
 
     blog = get_object_or_404(Blog, pk=pk)
     blog.delete()

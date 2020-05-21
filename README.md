@@ -15,8 +15,8 @@ The Superuser is the only user that has full create update delete abilities with
 
 
 #### Login Details For Assesment Only
-*
-*
+* Username =
+* Password  = 
 
 
 #### The users goals of this website are:
@@ -102,26 +102,28 @@ Same navigation as before, blog post title across the top, with the from below t
 Same navigation as before, With a form to add address details with an update call to action button below. To the right order history where the user can click on the order number to see that previouse order.
 
 #### Order history
-Same navigation as before, when the order is clicked a page saying order history is diaplayed with the order summery and to the bottom a link to the beekeepers blog.
+Same navigation as before, when the order is clicked from the profile page a page saying order history is diaplayed with the order summery and to the bottom a link to the beekeepers blog.
 
-
-
+#### Product Admin
+Product admin is only available to the superuser Same navigation as before, 
 
 
 ### Nice to have: 
 These features may be included in future releases of this application.
-* 
+* In future releases put a limit on how maney reviews a single user can put on a particular product.
+* Access so admin can moderate reviews with acess to deleteing them from the admin panel.
+* User blogs to share stories or ask for advisce on keeping bees.
 
 
 
 ### Technology’s used will include:
-[HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), [Bootstrap](https://getbootstrap.com/), [Javascript](https://en.wikipedia.org/wiki/JavaScript), [Python3](https://www.python.org/),  [Gitpod](https://www.gitpod.io/), [Sublime text](https://www.sublimetext.com/), [Balsamiq Mockup 3](https://balsamiq.com/wireframes/desktop/), [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html?gclid=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE&sdid=88X75SKR&mv=search&ef_id=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE:G:s&s_kwcid=AL!3085!3!394411736356!e!!g!!photoshop)
- and [Heroku](https://www.heroku.com/).
+[HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), [Bootstrap](https://getbootstrap.com/), [Javascript](https://en.wikipedia.org/wiki/JavaScript), [Python3](https://www.python.org/),  [Gitpod](https://www.gitpod.io/), [Sublime text](https://www.sublimetext.com/), [Balsamiq Mockup 3](https://balsamiq.com/wireframes/desktop/), [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html?gclid=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE&sdid=88X75SKR&mv=search&ef_id=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE:G:s&s_kwcid=AL!3085!3!394411736356!e!!g!!photoshop),
+[Heroku](https://www.heroku.com/), [Postgres](https://www.postgresql.org/) and [Django](https://www.djangoproject.com/)
 
 
 ## WireFrame Mockups:
 #### Desktop View:
-- [Home]
+- [Home](testing.md)
 
 
 
@@ -130,7 +132,7 @@ These features may be included in future releases of this application.
 - [Tablet Login]
 
 
-![Am I Responsive]
+![Am I Responsive](static/images/responsive.jpg)
 
 ## Screen Shots:
 #### Mobile & Tablet View:
@@ -143,24 +145,12 @@ These features may be included in future releases of this application.
 - [Tablet]
 
 
+## Database schema
+- [schema](https://i.imgur.com/KiuaIe1.jpg)
  
-## cansAndBottleInfo
-
-| Field         | Type     | Description                                |
-| :------------ | :------- | :----------------------------------------- |
-| \_id          | ObjectId | ID is auto-created by MongoDB              |
-| name          | String   | Name of beer                               |
-
-
-
-
-## users
-
-| Field         | Type     | Description                                |
-| :------------ | :------- | :----------------------------------------- |
-| \_id          | ObjectId | ID is auto-created by MongoDB              |
-
-
+The honey Pot, database schema displays that all users start with alauth authentication, linked to the user profiles with a one to one key, from there linked to the orders with a foreignkey 
+to allow maney orders to one user. The line items are linked to the orders with a foreignkey also allowing many line itmes to single orders, products are also linkked in the same way. The user frofile is alos liked to the 
+reviews as a foreignkey so the user can leave maney reviews.
 
 
 ## Defensive Design
@@ -169,22 +159,25 @@ These features may be included in future releases of this application.
 
 
 ## Testing:
-**Test:** Check if webhook recieved from account.external_account.created from stripe 
 
-**Result:** Recieved Successfully
+[Testing]()
 
-**Test:** Check if webhook recieved from payment_intent.succeeded
 
-**Result:** Recieved Successfully
 
-**Test:** Check if webhook recieved from payment_intent.payment_failed
+### Cross Browser Compatibility
+Tested on four Browsers
+* Chrome, No Errors works as intended.  
+* Opera, No Errors works as intended.
+* Firefox, The firefox browser struggled with css with pointer hover stuggling on the landing page, some tables alos stuggle with positioning.  
+* Edge, The Edge browser did not like alot of the css and the pointer hover caused strange movment in the user interface, some forms and tables 
+do not render in the correct places, howevere the loading time was fast and smooth.
 
-**Result:** Recieved Successfully
 
 ## Bugs & ongoign fixes
-* On the chrispy forms image input i have yet to find a way to style it in the next release i will have styled these buttons also.
+* On the chrispy forms image input I have yet to find a way to style the call to action buttons for uploading images in the next release I will have styled these buttons.
 * The sign up form atomatically auto focuses on user name instead of email.
-* the product admin page on smaller screens is not quite a contrained as i would prefer however it does not affect the usabillity of the page just rather athetics.
+* The product admin page on smaller screens is not quite a constrained as i would prefer however it does not affect the usabillity of the page just rather athetics.
+* Compatibilty is poor on 2 two of the mainstream browers so css fixes will be made in future releases or the application.
 
 
 
@@ -211,16 +204,6 @@ These features may be included in future releases of this application.
 | profiles.css              | Pass     |  No Errors                                     |
 | review.css                | Pass     |  No Errors                                     |
 | bass.css                  | Pass     |  No Errors                                     |
-
-
-
-### Cross Browser Compatibility
-Tested on four Browsers
-* Chrome    
-* Opera     
-* Firefox   
-* Edge      
-
 
 
 ### Deployment:
@@ -283,7 +266,7 @@ in the settings.py file under the the_honey_pot dropdown in the file window from
 near the top we now need to type import dj_databse_url
 
 Scroll down to the datase settings, comment out the default settings and type  DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-at this point we will nedd to make migrations to populate the postgres database to do this from the command promt type python3 manage.py migrate 
+at this point we will need to make migrations to create the postgres database to do this from the command promt type python3 manage.py migrate 
 our databse is now set up.
 
 We will now need to push our files to Heroku to be deployed or our live version.
@@ -359,7 +342,6 @@ It is of upmost importance NOBODY else sees these keys they are a high security 
 could leave you with extremely large bills form Amazon.
 For where to place these secure keys please refer to deploy with Heroku above. 
 
-You from the-honey-pot admin you can enter the products to sell.
 
 ### Credits:
 
@@ -380,8 +362,7 @@ https://tobiasahlin.com/moving-letters/#2
 
 images
 
-Dmitri Leiciu PXhere
-Repository Image
+
 
 product images of jars on a wedding table.
 http://www.cassidycarsonphotography.com/
@@ -402,6 +383,7 @@ Amazon
 Aipeiry
 Okssi 163828907
 
+Dmitri Leiciu PXhere
 Repository Image 
 
 
