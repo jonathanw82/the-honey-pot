@@ -53,6 +53,12 @@
    font-size: 1.2rem !important;
 }
 
+.qty-cart{
+    max-width: 20%;
+    border-radius: 50px!important;
+    text-align: center;
+}
+
 /* ------------- Product on landing -------------*/
 
 .product_heading{
@@ -65,7 +71,10 @@
 
 .product_cards{
     margin-top: 20px;
-    text-align: -webkit-center;
+    /* text-align: center;
+    margin-left: auto;
+    margin-right: auto; */
+    padding-left: 35px;
 }
 
 .product_heading_div{
@@ -94,8 +103,10 @@
 /* ----------- Product Management Page ----------*/
 
 .management_header{
-    text-align: -webkit-center;
     padding-bottom: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product_management_image{
@@ -105,7 +116,7 @@
 }
 
 .prod_img_box{
-    padding-left: 10 !important;
+    padding-left: 10px !important;
     text-align: center;
     border-right: 1px solid gray;
 }
@@ -185,8 +196,10 @@
 
 /* ----------------- Media Queries ---------------*/
 
-@media only screen and (max-width: 975px){
-
+@media only screen and (max-width: 1024px){
+    .product_cards{
+        padding-left: 15px;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -204,18 +217,24 @@
 }
 }
 
-/* ----------------- Media Queries ---------------*/
-
 @media only screen and (max-width: 425px){
 
 .product_cards{
-    text-align: -webkit-center;
-    padding-left: 10px;
-}
+    /* padding-left: 10px; */
+    /* text-align: center;
+    margin-left: auto;
+    margin-right: auto; */
+    padding-left: 60px;
 }
 
+.product_info_buttonbox{
+    text-align: center;
+}
 
-@media only screen and (max-width: 425px){
+.product-info-buttons{
+    justify-content: center!important;
+}
+
 .product_heading{
     font-size: 1.1rem;
 }
@@ -231,4 +250,16 @@
     padding-top: 5px;
     text-align: center;
 }
+}
+
+@media only screen and (max-width: 375px){
+    .product_cards{
+        padding-left: 40px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .product_cards{
+        padding-left: 10px;
+    }
 }

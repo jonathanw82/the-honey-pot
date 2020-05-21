@@ -182,7 +182,6 @@
 .empty-div-bottom{
     display: none;
 }
-
 }
 
 @media only screen and (max-width: 985px){
@@ -235,7 +234,7 @@
 }
 
 .desktop-view{
-    display: hidden;
+    display: none;
 }
 }
 
@@ -264,6 +263,7 @@
 
 .empty-div-bottom{
     height: 90px;
+}
 }
 
 @media only screen and (max-width: 375px){
@@ -297,4 +297,7 @@
     height: 80px;
 }
 
+.toast{
+    max-width: 250px!important;
+}
 }

@@ -63,7 +63,7 @@
     border: 1px solid black!important;
 }
 
-/* --------=--------- blog post --------==-------*/
+/* ------------------ blog post -----------------*/
 
 .empty-div-top{
     height: 80px;
@@ -72,6 +72,7 @@
 .blog-image-blog{
   text-align: center;
 }
+
 /* ----------------- Media Queries ---------------*/
 @media only screen and (max-width: 768px){
 

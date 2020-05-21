@@ -14,8 +14,8 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .update-link:hover{
@@ -78,14 +78,19 @@ input::-webkit-inner-spin-button {
     text-align: center!important;
 }
 
+.cart_totals_buttons{
+    text-align: center;
+}
 }    
+
+@media only screen and (max-width: 375px){
+.but-keep{
+    margin-bottom: 5px;
+}
+}
 
 @media only screen and (max-width: 320px){
 .cart_totals_buttons{
     text-align: center;
-}
-
-.but-keep{
-    margin-bottom: 5px;
 }
 }

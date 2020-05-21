@@ -7,6 +7,12 @@
 #### Click on image for live version
 </div>
 
+The Honey pot is a site for people passionate about good quality natural bee products, whether its honey or furiture polish, with the ability to 
+purchase products they have never tried before such as bees wax food wraps, or beeswax soap.
+
+The User has the ability to create edit and delete their own reviews on products as well as find out what is happening on the apiary with the bees. 
+The Superuser is the only user that has full create update delete abilities with the products and blogs.
+
 
 
 #### The users goals of this website are:
@@ -142,8 +148,26 @@ These features may be included in future releases of this application.
 ### Validation Using Jigsaw, Validator, Jshint and pep8
 | Page                      | Result   | Any Errors                                     |
 | :------------             | :------- | :--------------------------------------------- |
-| index.html                    | Pass     |  No Errors                                     |
-
+| index.html                | Pass     |  No Errors                                     |
+| product_info.html         | Pass     |  No Errors                                     |
+| create_review.html        | Pass     |  No Errors                                     |
+| edit_review.html          | Pass     |  No Errors                                     |
+| cart.html                 | Pass     |  No Errors                                     |
+| checkout.html             | Pass     |  No Errors                                     |
+| order_history.html        | Pass     |  No Errors                                     |
+| checkout.html             | Pass     |  No Errors                                     |
+| checkout_success.html     | Pass     |  No Errors                                     |
+| user_profile.html         | Pass     |  1 Error was using action instead of type      |
+| blogposts.html            | Pass     |  No Errors                                     |
+| blogpostsform.html        | Pass     |  No Errors                                     |
+| blogdetail.html           | Pass     |  No Errors                                     |
+| blog.css                  | Pass     |  No Errors                                     |
+| checkout.css              | Pass     |  No Errors                                     |
+| cart.css                  | Pass     |  No Errors                                     |
+| products.css              | Pass     |  1 Error was using -webkit-center              |
+| profiles.css              | Pass     |  No Errors                                     |
+| review.css                | Pass     |  No Errors                                     |
+| bass.css                  | Pass     |  No Errors                                     |
 
 
 
@@ -210,17 +234,62 @@ Heroku.
 We then need to setup a web process to do this at the command prompt type (heroku ps:scale web=1) after this our web process will be running we will now need to set up some 
 config Vars in heroku.
 
-Go back to heroku go to settings click reveal config vars, there will be a few things to add here, first setup IP so in the box that says Key type (IP) and in 
-the value box type (0.0.0.0) click add then do the same but type (PORT) and set that to (5000) click add. You will also need to add (MONGO_URI) and the (SECRET_KEY) for this information contact You site developer.
-#######################################################################################################################################################################################
+Go back to heroku go to settings click reveal config vars, there will be a few things to add here, first we will setup the email:
+* In the Key box enter EMAIL_HOST_USER the value thehoneypotms4@gmail.com
+* In the Key box enter EMAIL_HOST_PASS the value key can be obtained from your developer
+
+Then To setup Stripe for payments
+* In the Key box enter SECRET_KEY the value key can be obtained from your developer
+* In the Key box STRIPE_PUBLIC_KEY the value key can be obtained from your developer
+* In the Key box STRIPE_SECRET_KEY the value key can be obtained from your developer
+* In the Key box STRIPE_WH_KEY the value key can be obtained from your developer
+
+Then Amazon Web Service
+* In the Key box AWS_ACCESS_KEY_ID the value key can be obtained from the info about Amazon web service below
+* In the Key box AWS_SECRET_ACCESS_KEY the value key can be obtained from the info about Amazon web service below
+* In the Key box AWS_STORAGE_BUCKET_NAME the value key can be obtained from the info about Amazon web service below
+
+Then the Database 
+* In the key box DATABASE_URL the value key can be obtained from your developer
+
 Once all the steps have been taken, click more top right hand side of page and select restart all dynos the application will now be deployed.
-
 If a message pops up stating there may be some down time until the restart has finished click OK.
-
 Under the settings tab in Heroku, scroll down to domains and your link will be displayed there. It can be used to access the live version of the application.
 
 Deployment: The site will be deployed by 
 https://www.heroku.com/
+
+### How to deploy from Amazon Web Services
+
+First we need to sign up to AWS (Amazon Web Service) to host all our images, when you first sign up this can take a couple of hours to get working.
+When signed up login and in the dashboard search s3 then click create bucket 
+Give the bucket a name in this case (the-honey-pot), 
+Select your region, 
+Then uncheck the block all public access as the bucket needs to be public and then after click acknowledge.
+Then create bucket
+Click on the name of the bucket you have made, click permissions, then bucket policy, at the bottom of the page click policy generator but right click the mouse 
+to open it in another tab as not to go away from the page you are currently on.
+Go to the next tab ,
+In the security type of policy, select s3 bucket Policy, effect leave on allow,
+In the principle box jut type a star symbol *, In action select get object.
+Just under that select box you will need to paste in the amazon resource name, 
+Next select the previous tab without closing in the one you are on copy the amazon resource name details down that are at the end of the buck policy 
+editor arn arn:aws:s3:::the-honey-pot make sure there are no full stops or quotes, go back to the policy generator tab and past it in to the amazon resource name box and put a forward slash and a star at the end arn:aws:s3:::the-honey-pot /* 
+Click add statement then the generate polices button, a window will pop up, with some lines of code copy all the code from the box, then past it in on 
+the bucket policy editor below where you found the amazon resource name details.
+Click save 
+Then click the over view tab, then create folder, create a folder and call it media.
+Leave all the settings below as none and click save.
+At this point it is advised to upload a sample image into that folder, click on the folder and press the upload button, select an image and upload. 
+Once uploaded click on the image and a box will appear to the right, in the section overview find object url click the link if the image appears the setup is correct.
+At this point at the top right of the page there is a bell symbol to their right of it is a dropdown menu click and select my security credentials , 
+once on that page click access keys 
+Then click the button create new access key, at this point a box will pop up with a  2 keys ID and secret key take note of both I would advise clicking 
+the download button and saving an excel file containing  the keys. 
+It is of upmost importance NOBODY else sees these keys they are a high security key, failure to day so could compromise security of your website and you 
+could leave you with extremely large bills form Amazon.
+For where to place these secure keys please refer to deploy with Heroku above. 
+
 
 
 ### Credits:

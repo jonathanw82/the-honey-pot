@@ -65,7 +65,7 @@
             {% endif %}
             
             {% if cart %} 
-            <a class="nav-item nav-link" href=""><i class="fas fa-cart-arrow-down"></i> = {{ product_count }}</a>   
+            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-cart-arrow-down"></i> = {{ product_count }}</a>   
             {% else %}
             <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a> 
             {% endif %}
