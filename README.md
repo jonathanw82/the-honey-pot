@@ -123,7 +123,7 @@ These features may be included in future releases of this application.
 
 ## WireFrame Mockups:
 #### Desktop View:
-- [Home](testing.md)
+- [Home]()
 
 
 
@@ -158,9 +158,9 @@ reviews as a foreignkey so the user can leave maney reviews.
 
 
 
-## Testing:
+## Manual Testing:
 
-[Testing]()
+[Testing](documents/testing.md)
 
 
 
