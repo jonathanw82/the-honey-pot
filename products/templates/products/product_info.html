@@ -11,7 +11,11 @@
 <div class="container">
 	<div class="row">
             <div class="col-md-6 image-box-prod-info">
-                <img class="product_image_info" src="{{ product.image.url }}" alt="{{ product.name }}">        
+                 {% if product.image %}
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <img class="card-img-top" src="{{ MEDIA_URL }}images/noimage.png" alt="{{ product.name }}">
+                {% endif %}       
             </div>
             <div class="col-md-6"> 
                 <p class="product_heading_info">{{ product.name }}</p>       

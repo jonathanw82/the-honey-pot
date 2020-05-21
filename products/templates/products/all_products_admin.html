@@ -9,19 +9,22 @@
 {% block content %}
 <div class="empty-div" id="top"></div>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 management_header">
-            <h2>Product Mangement </h2>
-            <div class="user-name-man">You are Logged in as {{request.user.username}}</div>
-            <a  class="btn btn-info buttons-click" href="{% url 'add_product' %}">Add Product</a>
-            <a  class="btn btn-info buttons-click" href="#bottom"><i class="fas fa-arrow-down"></i> Go to bottom</a>
-        </div>
-    </div>
-	
+            <div class="row">
+                <div class="col-sm-12 management_header">
+                    <h2>Product Mangement </h2>
+                    <div class="user-name-man">You are Logged in as {{request.user.username}}</div>
+                    <a  class="btn btn-info buttons-click" href="{% url 'add_product' %}">Add Product</a>
+                    <a  class="btn btn-info buttons-click" href="#bottom"><i class="fas fa-arrow-down"></i> Go to bottom</a>
+                </div>
+            </div>
             {% for product in products %}
             <div class="row prod_man_box">
             <div class="col-md-4 prod_img_box">
-                <img class="product_management_image" src="{{ product.image.url }}" alt="{{ product.name }}">        
+                 {% if product.image %}
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <img class="img-img-top" src="{{ MEDIA_URL }}images/noimage.png" alt="{{ product.name }}">
+                {% endif %}     
               </div>
               <div class="col-md-8 prod_man_col"> 
               <table class="table prod_admin_table table-striped">

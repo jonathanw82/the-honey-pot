@@ -13,8 +13,8 @@ class ProductTestViews(TestCase):
         self.assertTemplateUsed(response, 'products/product_info.html')
 
     def test_add_products_admin(self):
-        user = User.objects.create(username='temporary', email='tem\
-                                   porary@gmail.com')
+        user = User.objects.create(username='temporary',
+                                   email='temporary@gmail.com')
         user.set_password('secret')
         user.is_superuser = True
         user.save()
@@ -24,8 +24,8 @@ class ProductTestViews(TestCase):
         self.assertTemplateUsed(response, 'products/all_products_admin.html')
 
     def test_add_products_admin_login_required(self):
-        user = User.objects.create(username='temporary', email='tempo\
-                                   rary@gmail.com')
+        user = User.objects.create(username='temporary',
+                                   email='temporary@gmail.com')
         user.set_password('secret')
         user.is_superuser = True
         user.save()
@@ -33,8 +33,8 @@ class ProductTestViews(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_add_products_admin_superuser_required(self):
-        user = User.objects.create(username='temporary', email='tempo\
-                                   rary@gmail.com')
+        user = User.objects.create(username='temporary',
+                                   email='temporary@gmail.com')
         user.set_password('secret')
         user.is_superuser = False
         user.save()
@@ -43,8 +43,8 @@ class ProductTestViews(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_get_products_update(self):
-        user = User.objects.create(username='temporary', email='temp\
-                                   orary@gmail.com')
+        user = User.objects.create(username='temporary',
+                                   email='temporary@gmail.com')
         user.set_password('secret')
         user.is_superuser = True
         user.save()
@@ -56,8 +56,8 @@ class ProductTestViews(TestCase):
         self.assertTemplateUsed(response, 'products/update_product.html')
 
     def test_post_products_update(self):
-        user = User.objects.create(username='temporary', email='te\
-                                   mporary@gmail.com')
+        user = User.objects.create(username='temporary',
+                                   email='temporary@gmail.com')
         user.set_password('secret')
         user.is_superuser = True
         user.save()

@@ -10,9 +10,13 @@
 The Honey pot is a site for people passionate about good quality natural bee products, whether its honey or furiture polish, with the ability to 
 purchase products they have never tried before such as bees wax food wraps, or beeswax soap.
 
-The User has the ability to create edit and delete their own reviews on products as well as find out what is happening on the apiary with the bees. 
+The User has the ability to create, edit and delete their own reviews on products as well as find out what is happening on the apiary with the bees. 
 The Superuser is the only user that has full create update delete abilities with the products and blogs.
 
+
+#### Login Details For Assesment Only
+*
+*
 
 
 #### The users goals of this website are:
@@ -54,12 +58,51 @@ The Superuser is the only user that has full create update delete abilities with
 
 
 ## Features:
-* 
+* Products to purchase through an ecommerse system
+* Ability for user to leave revies on products
+* A blog for superuser to add things about how the bees are getting on.
+* Administarion pannel so superusers can add edit delete products.
+* Profile page where user can see there order history. 
+* All pages have the same navigation bar with logo to the left that onclick takes you home from any page, to the right 3 call to action buttons home,blog and if not logged in
+a login button, if logged in the users name as a droop down with accesss to profile and logout. If super user there is also an admin button. To the right of the dropdown
+there is the shopping basket thats icon changes depending if any items are placed in the shopping cart. There is also a footer with slogan, copyright and social media icons.
 
-
- 
 
 #### Home
+The Home page consists of a navigation bar across the top with logoi left and call to action buttons on the right, the hero image and some text about the 
+apairy and an image of the beekeeper. Below that are cards with the poducts avilabale to purchase.
+In the footer slogan to left, copyright in the middle and social media icons to the right.
+
+#### Product Info Page
+Same navigation as before, product image to the left with title, description, price, quantity selector and 3 call to action buttons add to cart back and if any items are in the cart a cart button for ese of acess to the cart
+Below is a what our customers say header and a create review call to action button. Beloe that all the revies foir that particulr product are displayed, button appoear to edit delete if that logged in user created the review.
+
+#### The Shopping Cart 
+Same navigation as before, with image to the left, product name, item price, quantity selector, 2 buttons update and remove and subtotal.
+below to the right sub total, grand total 2 call to action buttons keep browsing and secure checkout, keep browsing return the user to the home page secure checkout take the user to the checkout.
+
+#### The Checkout
+Same navigation as before, with customer detail form to the left, with stripe payment modual at the bottom with 2 call to action buttons, Adjust cart, returns the user to the cart
+and complete order submits the form and payment.
+
+#### The Order Complete Page
+Same navigation as before, when the order is complete a page saying thank you for your order is diaplayed with the order summery and to the bottom a link to the beekeepers blog.
+
+#### Blog Page 
+Same navigation as before, title header across the top center with a call to action button below to create blogs, only avaible to the superuser can asee this button. Below are the blog posts with
+image top title below then amount of views, with 2 call to action buttons read more and if super user delete.
+
+#### Blog Readmore
+Same navigation as before, Image left, title of the blog to the right, number of views below and 2 call to action buttons back to blog and if superuser edit blog button, with the blog contents below that.
+
+#### Edit Blog 
+Same navigation as before, blog post title across the top, with the from below that 3 call to action buttons one fot adding an image 2 , save and back that reiredts to the bloposts page.
+
+#### Profile Page
+Same navigation as before, With a form to add address details with an update call to action button below. To the right order history where the user can click on the order number to see that previouse order.
+
+#### Order history
+Same navigation as before, when the order is clicked a page saying order history is diaplayed with the order summery and to the bottom a link to the beekeepers blog.
 
 
 
@@ -248,7 +291,7 @@ We will now need to push our files to Heroku to be deployed or our live version.
 To do this in Heroku go to the app you created earlier then select deploy, under app information you will see Heroku git URL copy the url, in the bash 
 command line in the work space of choice type (heroku git:remote –a <app_name>) at this point you need to push all your data up to Heroku.
 
-To do this from your git bash command line type (git add .) then (git commit –m “deploy to heroku”) then (git push –u heroku master ) this will take a few minutes to push all the data to 
+To do this from your git bash command line type (git add .) then (git commit –m “deploy to heroku”) then (git push ) this will take a few minutes to push all the data to 
 Heroku. 
 
 We then need to setup a web process to do this at the command prompt type (heroku ps:scale web=1) after this our web process will be running we will now need to set up some 
