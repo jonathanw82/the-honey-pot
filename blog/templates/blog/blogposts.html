@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-sm-12 blog-heading">
             <h2>The BeeKeeper's Blog</h2>
-            <h4>Keeping you up to date with all things our bees have been upto!</h4>
+            <h4>Keeping you up to date with everything our bees have been up to!</h4>
             {% if request.user.is_superuser  %}
             <a href="{% url 'createblog' %}" class="btn btn-primary superuser-but buttons-click">Create Blog</a>
             {% endif %}
