@@ -82,6 +82,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'webhook received: {event["type"]} | SUCCESS: Varified order already in database',
                 status=200)
