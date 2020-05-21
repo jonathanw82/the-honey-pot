@@ -1,5 +1,5 @@
 <h1 align="center">
-   <a href="" target="_blank"><img src="" alt="logo image"/></a>
+   <a href="" target="_blank"><img src="static/images/repoimage.jpg" alt="logo image"/></a>
  </h1>
  
 <div align="center">
@@ -379,6 +379,9 @@ Moving letters
 https://tobiasahlin.com/moving-letters/#2
 
 images
+
+Dmitri Leiciu PXhere
+Repository Image
 
 product images of jars on a wedding table.
 http://www.cassidycarsonphotography.com/
