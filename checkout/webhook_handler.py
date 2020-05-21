@@ -83,8 +83,7 @@ class StripeWH_Handler:
                 time.sleep(1)
         if order_exists:
             return HttpResponse(
-                content=f'webhook received: {event["type"]} | SUCCESS: Varified\
-                                                    order already in database',
+                content=f'webhook received: {event["type"]} | SUCCESS: Varified order already in database',
                 status=200)
         else:
             order = None
@@ -116,7 +115,7 @@ class StripeWH_Handler:
                     order.delete()
                 return HttpResponse(content=f'webhook received: {event["type"]} | ERROR: {e}',
                                     status=500)
-
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
