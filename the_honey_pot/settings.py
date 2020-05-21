@@ -126,6 +126,8 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+    STATICFILES_STORAGE = 'whitenoise.storage.Com\
+                           pressedManifestStaticFilesStorage'
 else:
     DATABASES = {
         'default': {
@@ -184,8 +186,6 @@ STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # To be seen with a tutor 
 
 # CREDENTIAL
 # Who I am
