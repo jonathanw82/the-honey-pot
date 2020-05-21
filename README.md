@@ -209,7 +209,9 @@ details as stated below. You will also be able to make any changes you require t
 original master from the original repository.
 
 
-##### How to deploy from Heroku
+##### How to deploy from Heroku ,
+### Most of the deployment to the database will be carried out by your developer, but these are the steps you will need to take otherwise.
+
 To deploy from Heroku, first sign up to do this go to https://www.heroku.com/
 and click the sign up button on right hand side and fill out the form to create a new account,then select Python as the development language. 
 
@@ -222,6 +224,24 @@ You will then be presented with a dashboard with listings of command lines for u
 
 From your workspace of choice open the command line and install Heroku depending on workspace, type (pip3 install heroku) once installed, type (heroku login -I)
 then enter your email and password you set Heroku up with. It will then state you are logged in. 
+
+Then back on the heroku website select the resources tab go down to add-ons and in the search box, search postgres, then select Heroku Postgres this will eventually be where your databse will be kept,
+after selecting a box will popup, select Hobby Dev-Free plan and click provision.
+
+At this point we will need to install 2 pices of software in our workspace they will be dj_database_url, and psycopg2.
+
+From your workspace of choice open the command line and install type pip3 install dj_database_url and pip3 install psycopg2-binary
+You will need to freeze the requirements type pip3 freeze > requirements.txt 
+
+And that'll make sure Heroku installs all our apps requirements when we deploy it.
+
+To set up the database for deployment we need to change some settigns in setting.py 
+in the settings.py file under the the_honey_pot dropdown in the file window from thory workspace select settings.py
+near the top we now need to type import dj_databse_url
+
+Scroll down to the datase settings, comment out the default settings and type  DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+at this point we will nedd to make migrations to populate the postgres database to do this from the command promt type python3 manage.py migrate 
+our databse is now set up.
 
 We will now need to push our files to Heroku to be deployed or our live version.
 
@@ -250,7 +270,7 @@ Then Amazon Web Service
 * In the Key box AWS_STORAGE_BUCKET_NAME the value key can be obtained from the info about Amazon web service below
 
 Then the Database 
-* In the key box DATABASE_URL the value key can be obtained from your developer
+* In the key box DATABASE_URL the value key will already be populated because of the steps we took abouv. 
 
 Once all the steps have been taken, click more top right hand side of page and select restart all dynos the application will now be deployed.
 If a message pops up stating there may be some down time until the restart has finished click OK.
@@ -262,35 +282,41 @@ https://www.heroku.com/
 ### How to deploy from Amazon Web Services
 
 First we need to sign up to AWS (Amazon Web Service) to host all our images, when you first sign up this can take a couple of hours to get working.
-When signed up login and in the dashboard search s3 then click create bucket 
-Give the bucket a name in this case (the-honey-pot), 
-Select your region, 
-Then uncheck the block all public access as the bucket needs to be public and then after click acknowledge.
-Then create bucket
-Click on the name of the bucket you have made, click permissions, then bucket policy, at the bottom of the page click policy generator but right click the mouse 
+
+When signed up login and in the dashboard search s3 then click create bucket give the bucket a name in this case (the-honey-pot), 
+
+Select your region, then uncheck the block all public access as the bucket needs to be public and then after click acknowledge.
+
+Then create bucket click on the name of the bucket you have made, click permissions, then bucket policy, at the bottom of the page click policy generator but right click the mouse 
 to open it in another tab as not to go away from the page you are currently on.
-Go to the next tab ,
+
+Go to the next tab,
+
 In the security type of policy, select s3 bucket Policy, effect leave on allow,
 In the principle box jut type a star symbol *, In action select get object.
-Just under that select box you will need to paste in the amazon resource name, 
-Next select the previous tab without closing in the one you are on copy the amazon resource name details down that are at the end of the buck policy 
+
+Just under that select box you will need to paste in the amazon resource name, next select the previous tab without closing in the one you are on copy the amazon resource name details down that are at the end of the buck policy 
 editor arn arn:aws:s3:::the-honey-pot make sure there are no full stops or quotes, go back to the policy generator tab and past it in to the amazon resource name box and put a forward slash and a star at the end arn:aws:s3:::the-honey-pot /* 
 Click add statement then the generate polices button, a window will pop up, with some lines of code copy all the code from the box, then past it in on 
 the bucket policy editor below where you found the amazon resource name details.
-Click save 
+Click save.
+
 Then click the over view tab, then create folder, create a folder and call it media.
+
 Leave all the settings below as none and click save.
+
 At this point it is advised to upload a sample image into that folder, click on the folder and press the upload button, select an image and upload. 
 Once uploaded click on the image and a box will appear to the right, in the section overview find object url click the link if the image appears the setup is correct.
-At this point at the top right of the page there is a bell symbol to their right of it is a dropdown menu click and select my security credentials , 
-once on that page click access keys 
-Then click the button create new access key, at this point a box will pop up with a  2 keys ID and secret key take note of both I would advise clicking 
-the download button and saving an excel file containing  the keys. 
+
+At this point at the top right of the page there is a bell symbol to their right of it is a dropdown menu click and select my security credentials, 
+once on that page click access keys, Then click the button create new access key, at this point a box will pop up with a  2 keys ID and secret key take note of both I would advise clicking 
+the download button and saving an excel file containing  the keys.
+
 It is of upmost importance NOBODY else sees these keys they are a high security key, failure to day so could compromise security of your website and you 
 could leave you with extremely large bills form Amazon.
 For where to place these secure keys please refer to deploy with Heroku above. 
 
-
+You from the-honey-pot admin you can enter the products to sell.
 
 ### Credits:
 
