@@ -1,6 +1,6 @@
 ### Full Manual Testing 
 
-[redme](README.md)
+[Readme](/README.md)
 
 **Test:** Login button take the user to the login page.
 
