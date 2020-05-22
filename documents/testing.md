@@ -4,7 +4,7 @@ This document is an appendice to the ReadMe file.
 
 [Readme](/README.md)
 
-**Test:** Login button take the user to the login page.
+**Test:** Login button takes the user to the login page.
 
 **Result:** Works as intended.
 
@@ -32,7 +32,7 @@ This document is an appendice to the ReadMe file.
 
 **Result:** Works as intended. 
 
-**Test:** The save button saves the form and rediects to the product info, the back buton does the same without saving the form.
+**Test:** The save button saves the form and redirects to the product info, the back buton does the same without saving the form.
 
 **Result:** Works as intended. 
 
@@ -40,7 +40,7 @@ This document is an appendice to the ReadMe file.
 
 **Result:** Works as intended. 
 
-**Test:** The edit review button takes the user to the edit review form and the done button saves the form and redirects the user the the products indo page
+**Test:** The edit review button takes the user to the edit review form and the done button saves the form and redirects the user the the products info page
 
 **Result:** Works as intended. 
 
@@ -52,11 +52,11 @@ This document is an appendice to the ReadMe file.
 
 **Result:** Works as intended. 
 
-**Test:** While in the cart the update button updates quantitiy and remove button removess the item from cart.
+**Test:** While in the cart the update button updates quantity and the remove button removes the item from the cart.
 
 **Result:** Works as intended. 
 
-**Test:** the keep browing button take the user back to the landing page where the products are.
+**Test:** the keep browsing button takes the user back to the landing page where the products are.
 
 **Result:** Works as intended. 
 
@@ -64,23 +64,23 @@ This document is an appendice to the ReadMe file.
 
 **Result:** Works as intended. 
 
-**Test:** When at the checkout a formn is displayed with the full name field highlited
+**Test:** When at the checkout a form is displayed with the full name field highlighted
 
 **Result:** Works as intended. 
 
-**Test:** When filling out the form all required field give user feedback befoire the form can be submitted
+**Test:** When filling out the form all required fields give user feedback befoire the form can be submitted
 
 **Result:** Works as intended. 
 
-**Test:** When a product is added to cart and checout is entered, the for filled out and the test card number is entered the order subits corectly
+**Test:** When a product is added to the cart and checkout is entered, with the form filled out and the test card number, then the order submits corectly
 
 **Result:** Works as intended. 
 
-**Test:** Payment with card number 4242 4242 4242 4242 submits an order and spripe says the payment was successful
+**Test:** Payment with card number 4242 4242 4242 4242 submits an order and stripe says the payment was successful
 
 **Result:** Works as intended. 
 
-**Test:** Payment with card number 4000 0027 6000 3184 stripe askes for authentication in a popup box and clicking fail a warning message is displayed under the card inputbox
+**Test:** Payment with card number 4000 0027 6000 3184 stripe askes for authentication in a popup box and on clicking fail a warning message is displayed under the card inputbox
 
 **Result:** Works as intended. 
 
@@ -116,15 +116,15 @@ This document is an appendice to the ReadMe file.
 
 **Result:** Works as intended. 
 
-**Test:** The readmore button takes the user to the blog post 
+**Test:** The read more button takes the user to the blog post 
 
 **Result:** Works as intended. 
 
-**Test:** the image and text is displayed and the back to blog button redirets back to blog.
+**Test:** the image and text is displayed and the back to blog button redirects back to blog.
 
 **Result:** Works as intended. 
 
-**Test:** The edit blog button is only visiuble to the super user and take them to the edit blog form
+**Test:** The edit blog button is only visible to the super user and takes them to the edit blog form
 
 **Result:** Works as intended. 
 
@@ -132,8 +132,8 @@ This document is an appendice to the ReadMe file.
 
 **Result:** Works as intended. 
 
-**Test:** The create blog button takes the user to the blog create form the required fields give feed back, the upload image button opens a local box for selection of images
-and the save button saves the for and rediredts to the blog. the backbutton redirets to the same place. 
+**Test:** The create blog button takes the user to the blog create form. The required fields give feed back, the upload image button opens a local box for selection of images
+and the save button saves the form and redirects to the blog. The backbutton redirects to the same place. 
 
 **Result:** Works as intended. 
 
@@ -141,7 +141,7 @@ and the save button saves the for and rediredts to the blog. the backbutton redi
 
 **Result:** Works as intended. 
 
-**Test:** On clicking the profile button the user is redicted to the profile page
+**Test:** On clicking the profile button the user is redirected to the profile page
 
 **Result:** Works as intended.
 
@@ -157,7 +157,7 @@ and the save button saves the for and rediredts to the blog. the backbutton redi
 
 **Result:** Works as intended.
 
-**Test:** the blog button redirects to the blog page and the bsck button takes the user back to the profile page.
+**Test:** the blog button redirects to the blog page and the back button takes the user back to the profile page.
 
 **Result:** Works as intended.
 
@@ -165,31 +165,31 @@ and the save button saves the for and rediredts to the blog. the backbutton redi
 
 **Result:** Works as intended. 
 
-**Test:** if logged in clicking on the users name will give a drop down menu with acess to profile and logout
+**Test:** if logged in, clicking on the users name will give a drop down menu with access to profile and logout
 
 **Result:** Works as intended. 
 
 **Test:** If super user also gives a link to the admin payment_failed
 
-**Result** ***BUG:*** Bug found, if the user has only just logged in the drop down menu will dop but there admin or profile buttons will not be accessable, untill the user has clicked on the home button
+**Result** ***BUG:*** Bug found, if the user has only just logged in, the drop down menu will drop but their admin or profile buttons will not be accessable until the user has clicked on the home button,
 then the user can click on all buttons.
 
-**Resolved** It was the case that a Toast was not showing infront of the menu, as i had not inclided the {{ block.super }} in the script tab so the toast was transpartent.
+**Resolved** It was the case that a Toast was not showing infront of the menu, as I had not included the {{ block.super }} in the script tab so the toast was transparent.
 
 **Test:** the shopping cart icon on the nav bar is empty when it contains no products and the icon changes and a item quantity number appears next to it.
 
 **Result:** Works as intended. 
 
-**Test:** If super user by clicking admin in the dropdown navigation menu take th user tot the admin pannel
+**Test:** If superuser, when clicking admin in the dropdown navigation menu it will take the user to the admin panel
 
 **Result:** Works as intended. 
 
-**Test:** All produts are visible in a table
+**Test:** All products are visible in a table
 
 **Result:** Works as intended. 
 
-**Test:** On clicking on either add product button the prodct add form is displayed all nessary fields give user feedback or the form will not submit, also when clicking on the choose file button a 
-box opens so the user can selct the image for the product, the add product button saves the form and rediets to the admin panel 
+**Test:** On clicking on either add product button, the product add form is displayed. All necessary fields give user feedback or the form will not submit, also when clicking on the choose file button a 
+box opens so the user can select the image for the product. The add product button saves the form and redirects to the admin panel 
 
 **Result:** Works as intended. 
 
@@ -205,19 +205,19 @@ box opens so the user can selct the image for the product, the add product butto
 
 **Result:** Works as intended. 
 
-**Test:** All social media icons link to respective sites in spearte tabs
+**Test:** All social media icons link to respective sites in separate tabs
 
 **Result:** Works as intended. 
 
-**Test:** Clicking an empty cart will take you to your cart is empty page where the keep browsing button redirets to the landing page
+**Test:** Clicking an empty cart will take you to your cart is empty page where the keep browsing button redirects to the landing page
 
 **Result:** Works as intended.
 
-**Test:** The logout button takes you to the logout confimation page and the logout button logs the user out 
+**Test:** The logout button takes you to the logout confirmation page and the logout button logs the user out 
 
 **Result:** Works as intended. 
 
-**Test:** All other features of alauth such as signup,forgot password etc work as intended
+**Test:** All other features of allauth such as signup, forgot password etc. work as intended
 
 **Result:** Works as intended.
 
