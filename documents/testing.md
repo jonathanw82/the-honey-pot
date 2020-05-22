@@ -174,6 +174,8 @@ and the save button saves the for and rediredts to the blog. the backbutton redi
 **Result** ***BUG:*** Bug found, if the user has only just logged in the drop down menu will dop but there admin or profile buttons will not be accessable, untill the user has clicked on the home button
 then the user can click on all buttons.
 
+**Resolved** It was the case that a Toast was not showing infront of the menu, as i had not inclided the {{ block.super }} in the script tab so the toast was transpartent.
+
 **Test:** the shopping cart icon on the nav bar is empty when it contains no products and the icon changes and a item quantity number appears next to it.
 
 **Result:** Works as intended. 

@@ -145,6 +145,27 @@ These features may be included in future releases of this application.
 
 ![Am I Responsive](static/images/responsive.jpg)
 
+#### Styling
+
+### Font 
+
+* Over all the main font used was standard sans-serif i felt the standard font felt at home.
+* The main site logo used a google font 'Pacifico' i felt the shape and cursiveness worked well with how i had visioned the logo.
+
+### Colours
+<div align="center">
+    <img src="static/images/colors.jpg" alt="color card" aria-label="color card" />
+</div>
+
+- Yellow: #F2B705
+- light Orange #f29F05
+- Burnt Orange #D96704
+- Dark Orange #BF3604
+
+* I felt htis coloy selction matched the overall theme of the site as it deicated to honey the selectid color sheme fitted well
+ 
+
+
 ## Screen Shots:
 #### Mobile & Tablet View:
 - [Desktop](https://i.imgur.com/sFjMINL.jpg)
@@ -164,13 +185,18 @@ These features may be included in future releases of this application.
 ## Database schema
 - [schema](https://i.imgur.com/KiuaIe1.jpg)
  
-The honey Pot, database schema displays that all users start with alauth authentication, linked to the user profiles with a one to one key, from there linked to the orders with a foreignkey 
+The honey Pot, database schema displays that all users start with allauth authentication, linked to the user profiles with a one to one key, from there linked to the orders with a foreignkey 
 to allow maney orders to one user. The line items are linked to the orders with a foreignkey also allowing many line itmes to single orders, products are also linkked in the same way. The user frofile is alos liked to the 
 reviews as a foreignkey so the user can leave maney reviews.
 
 
 ## Defensive Design
+A main concern I had during development, was that when a user deletes a post or a product there is no interation asking them do they really want to delete that in Futcher
+releases of the application I will incoporate this feature.
 
+For this version of the application I have a restriction that only the superusers can create products/blog, in future versions I will allow staff to do the same.
+
+in future releases incorpoate a way that users can only leave one review per product, this will stop user from spamming the reviews section.
 
 ## Manual Testing:
 Please click here for manual testing page
@@ -192,9 +218,6 @@ do not render in the correct places, howevere the loading time was fast and smoo
 * The sign up form atomatically auto focuses on user name instead of email.
 * The product admin page on smaller screens is not quite a constrained as i would prefer however it does not affect the usabillity of the page just rather athetics.
 * Compatibilty is poor on 2 two of the mainstream browers so css fixes will be made in future releases or the application.
-* After authentication the top 2 button in the drop down menu dont work untill the home button is pressed, I have not yet found a solution to this problem but will have it solved
-in the next version of the application.
-* The footer is slightlty wider than the headder due to time constarints this we be corrected in the next version of the application.
 
 
 
@@ -362,6 +385,10 @@ For where to place these secure keys please refer to deploy with Heroku above.
 
 ### Credits:
 
+I would like to thank my tutors Xavier Astor, Kevin Loughrey, Chirs Zielinski and my mentor Brian Macharia for there ongoing support and guidance thoughout 
+the develpoment process of thisa application.
+
+
 The cart, checkout and stripe tutorials from boutique ado, Code Institute.
 
 
@@ -375,9 +402,6 @@ Honey Pot Images #1191196
 
 Moving letters
 https://tobiasahlin.com/moving-letters/#2
-
-images
-
 
 
 product images of jars on a wedding table.
@@ -402,10 +426,5 @@ Okssi 163828907
 Dmitri Leiciu PXhere
 Repository Image 
 
-
-
-
-
-
-
-
+BeeKeeper images in the blog and on the landing page
+Myself Jon Wheway
