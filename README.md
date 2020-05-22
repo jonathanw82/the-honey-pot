@@ -1,5 +1,5 @@
 <h1 align="center">
-   <a href="" target="_blank"><img src="static/images/repoimage.jpg" alt="logo image"/></a>
+   <a href="https://jonathanw82-the-honey-pot.herokuapp.com/" target="_blank"><img src="static/images/repoimage.jpg" alt="logo image"/></a>
  </h1>
  
 <div align="center">
@@ -59,7 +59,7 @@ The Superuser is the only user that has full create update delete abilities with
 
 ## Features:
 * Products to purchase through an ecommerse system
-* Ability for user to leave revies on products
+* Ability for user to leave reviews on products
 * A blog for superuser to add things about how the bees are getting on.
 * Administarion pannel so superusers can add edit delete products.
 * Profile page where user can see there order history. 
@@ -105,7 +105,7 @@ Same navigation as before, With a form to add address details with an update cal
 Same navigation as before, when the order is clicked from the profile page a page saying order history is diaplayed with the order summery and to the bottom a link to the beekeepers blog.
 
 #### Product Admin
-Product admin is only available to the superuser Same navigation as before, 
+Product admin is only available to the superuser Same navigation as before, with a create product button at the top canter with a to bottom button next to it, each prodct also has 2 buttons update and delete. 
 
 
 ### Nice to have: 
@@ -113,36 +113,51 @@ These features may be included in future releases of this application.
 * In future releases put a limit on how maney reviews a single user can put on a particular product.
 * Access so admin can moderate reviews with acess to deleteing them from the admin panel.
 * User blogs to share stories or ask for advisce on keeping bees.
+* The ability to decide wether you want ot actually delete a product after pressing the delete button.
 
 
 
 ### Technology’s used will include:
 [HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), [Bootstrap](https://getbootstrap.com/), [Javascript](https://en.wikipedia.org/wiki/JavaScript), [Python3](https://www.python.org/),  [Gitpod](https://www.gitpod.io/), [Sublime text](https://www.sublimetext.com/), [Balsamiq Mockup 3](https://balsamiq.com/wireframes/desktop/), [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html?gclid=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE&sdid=88X75SKR&mv=search&ef_id=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE:G:s&s_kwcid=AL!3085!3!394411736356!e!!g!!photoshop),
-[Heroku](https://www.heroku.com/), [Postgres](https://www.postgresql.org/) and [Django](https://www.djangoproject.com/)
+[Heroku](https://www.heroku.com/), [Postgres](https://www.postgresql.org/), [Stripe](https://stripe.com/) and [Django](https://www.djangoproject.com/)
 
 
 ## WireFrame Mockups:
 #### Desktop View:
-- [Home]()
-
+- [Desktop](https://i.imgur.com/JN7O89M.png)
+- [Desktop](https://i.imgur.com/iFtbn1W.png)
+- [Desktop](https://i.imgur.com/GJzASru.png)
+- [Desktop](https://i.imgur.com/zoUB0rY.png)
+- [Desktop](https://i.imgur.com/tU2TVOg.png)
+- [Desktop](https://i.imgur.com/yZfudUV.png)
 
 
 #### Mobile & Tablet View:
-- [Mobile Login]
-- [Tablet Login]
+- [Mobile](https://i.imgur.com/NmgTbDM.png)
+- [Mobile](https://i.imgur.com/cHcmhlY.png)
+- [Tablet](https://i.imgur.com/kUOkmyB.png)
+- [Tablet](https://i.imgur.com/LLheSEI.png)
+- [Tablet](https://i.imgur.com/8XShjB3.png)
+- [Tablet](https://i.imgur.com/bnnMAcP.png)
+
 
 
 ![Am I Responsive](static/images/responsive.jpg)
 
 ## Screen Shots:
 #### Mobile & Tablet View:
-- [Desktop]
-- [Desktop]
-- [Desktop]
-- [Desktop]
-- [Mobile]
-- [Tablet]
-- [Tablet]
+- [Desktop](https://i.imgur.com/sFjMINL.jpg)
+- [Desktop](https://i.imgur.com/Ip7BWgH.jpg)
+- [Desktop](https://i.imgur.com/995GMjG.jpg)
+- [Desktop](https://i.imgur.com/Qkzp8We.jpg)
+- [Desktop](https://i.imgur.com/uL4cGAW.jpg)
+- [Desktop](https://i.imgur.com/y0RQo6r.jpg)
+- [Mobile](https://i.imgur.com/rLgwnmu.jpg)
+- [Mobile](https://i.imgur.com/CaDnRlS.jpg)
+- [Mobile](https://i.imgur.com/xTQMspr.jpg)
+- [Tablet](https://i.imgur.com/vcA1piZ.jpg)
+- [Tablet](https://i.imgur.com/Hzw2CCo.jpg)
+- [Tablet](https://i.imgur.com/F8PuCuW.jpg)
 
 
 ## Database schema
@@ -156,10 +171,8 @@ reviews as a foreignkey so the user can leave maney reviews.
 ## Defensive Design
 
 
-
-
 ## Manual Testing:
-
+Please click here for manual testing page
 [Testing](documents/testing.md)
 
 
@@ -178,6 +191,9 @@ do not render in the correct places, howevere the loading time was fast and smoo
 * The sign up form atomatically auto focuses on user name instead of email.
 * The product admin page on smaller screens is not quite a constrained as i would prefer however it does not affect the usabillity of the page just rather athetics.
 * Compatibilty is poor on 2 two of the mainstream browers so css fixes will be made in future releases or the application.
+* After authentication the top 2 button in the drop down menu dont work untill the home button is pressed, I have not yet found a solution to this problem but will have it solved
+in the next version of the application.
+* The footer is slightlty wider than the headder due to time constarints this we be corrected in the next version of the application.
 
 
 
@@ -346,7 +362,6 @@ For where to place these secure keys please refer to deploy with Heroku above.
 ### Credits:
 
 The cart, checkout and stripe tutorials from boutique ado, Code Institute.
-
 
 
 
