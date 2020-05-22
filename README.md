@@ -13,13 +13,6 @@ The User has the ability to create, edit and delete their own reviews on product
 The Superuser is the only user that has full create update delete abilities with the products and blogs.
 
 
-
-#### Login Details For Assesment Only
-* test@test.com
-* Username = testadmin
-* Password  = letmein12345
-
-
 #### The users goals of this website are:
 * Easy to navigate site that allows straightforward purchase of products 
 * Able to login to view and manage their profile and previous orders.
