@@ -141,7 +141,6 @@ These features may be included in future releases of this application.
 - [Tablet](https://i.imgur.com/bnnMAcP.png)
 
 
-
 ![Am I Responsive](static/images/responsive.jpg)
 
 ## Screen Shots:
