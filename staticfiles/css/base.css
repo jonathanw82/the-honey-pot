@@ -9,12 +9,13 @@
     height: 60px;
 }
 
-.textinput{
-    !important;
+.buttons-click{
+    background: orange!important;
+    color:black!important;
 }
 
-.login-box{
-    justify-content: center;
+.buttons-click:hover{
+    border: 1px solid black!important;
 }
 /*-------------- Navigation Bar -------------*/
 
@@ -181,7 +182,6 @@
 .empty-div-bottom{
     display: none;
 }
-
 }
 
 @media only screen and (max-width: 985px){
@@ -234,7 +234,7 @@
 }
 
 .desktop-view{
-    display: hidden;
+    display: none;
 }
 }
 
@@ -263,6 +263,7 @@
 
 .empty-div-bottom{
     height: 90px;
+}
 }
 
 @media only screen and (max-width: 375px){
@@ -296,4 +297,7 @@
     height: 80px;
 }
 
+.toast{
+    max-width: 250px!important;
+}
 }

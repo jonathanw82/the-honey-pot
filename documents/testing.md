@@ -1,3 +1,5 @@
+This document is an appendice to the ReadMe file.
+
 ### Full Manual Testing 
 
 [Readme](/README.md)

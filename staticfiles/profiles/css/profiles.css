@@ -2,12 +2,34 @@
     height: 100px;
 }
 
-.profile-form{
-    /* width: 20px!important; */
-}
-
 .form-control:focus{
-    border-color: #5cb85c!important;
     box-shadow: none;
     -webkit-box-shadow: none;
 } 
+
+.buttons-click{
+    background: orange!important;
+    color:black!important;
+}
+
+.buttons-click:hover{
+    border: 1px solid black!important;
+}
+
+.tabel-responsive{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    text-align: -webkit-center;
+}
+
+/*------------- Media Query ------------*/
+
+@media only screen and (max-width: 425px){
+.profile-heading{
+    text-align: center;
+}
+
+form{
+    text-align: center!important;
+}
+}

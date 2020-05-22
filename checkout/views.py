@@ -1,16 +1,19 @@
 # Content followed from Boutique ado CodeInstitute
-from django.shortcuts import render, reverse, redirect, HttpResponse, get_object_or_404
+from django.conf import settings
+from django.shortcuts import render, reverse, redirect,\
+                             HttpResponse, get_object_or_404
 from django.contrib import messages
-from .forms import OrderForm
 from django.views.decorators.http import require_POST
+
+import json
+import stripe
+
 from .models import Order, OrderLineItem
+from .forms import OrderForm
 from profiles.models import User_Profile
 from profiles.forms import User_Profile_form
 from products.models import Products
 from cart.context import cart_contents
-from django.conf import settings
-import json
-import stripe
 
 
 @require_POST
@@ -117,32 +120,32 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    profile = User_Profile.objects.get(user=request.user)
-    order.user_profile = profile
+
+    if request.user.is_authenticated:
+        profile = User_Profile.objects.get(user=request.user)
+        order.user_profile = profile
+
+        if save_info:
+            profile_data = {'phone_number': order.phone_number,
+                            'street_address1': order.street_address1,
+                            'street_address2': order.street_address2,
+                            'town_or_city': order.town_or_city,
+                            'postcode': order.postcode,
+                            'full_name': order.full_name}
+            user_profile_form = User_Profile_form(profile_data,
+                                                  instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     order.save()
-
-    if save_info:
-        profile_data = {
-            'phone_number': order.phone_number,
-            'street_address1': order.street_address1,
-            'street_address2': order.street_address2,
-            'town_or_city': order.town_or_city,
-            'postcode': order.postcode,
-            'full_name': order.full_name,
-        }
-        user_profile_form = User_Profile_form(profile_data, instance=profile)
-        if user_profile_form.is_valid():
-            user_profile_form.save()
-
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
     if 'cart' in request.session:
         del request.session['cart']
+
     template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-    }
+    context = {'order': order}
 
     return render(request, template, context)

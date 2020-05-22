@@ -38,10 +38,11 @@
                 {% include 'products/products.html' %}
             </div>
         
-        </div>  
+        </div> 
        
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
     <script src="{% static 'js/about.js' %}"></script>
 {% endblock %}
