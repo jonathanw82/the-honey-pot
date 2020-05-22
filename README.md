@@ -8,10 +8,11 @@
 </div>
 
 The Honey pot is a site for people passionate about good quality natural bee products, whether its honey or furiture polish, with the ability to 
-purchase products they have never tried before such as bees wax food wraps, or beeswax soap.
+Purchase products they have never tried before such as bees wax food wraps, or beeswax soap.
 
 The User has the ability to create, edit and delete their own reviews on products as well as find out what is happening on the apiary with the bees. 
 The Superuser is the only user that has full create update delete abilities with the products and blogs.
+
 
 
 #### Login Details For Assesment Only
@@ -21,8 +22,8 @@ The Superuser is the only user that has full create update delete abilities with
 
 #### The users goals of this website are:
 * Easy to navigate. 
-* able to login.
-* view there profile and previouse orders.
+* Able to login.
+* View there profile and previouse orders.
 * Read the blog to keep upto date with what the bees are doing
 
 #### The Admin goals of this website are:
@@ -30,9 +31,9 @@ The Superuser is the only user that has full create update delete abilities with
 * Able to login.
 * View there product list.
 * Create new products.
-* View there produts.
-* Update ther products.
-* Delete Products.
+* View the produts.
+* Update the products.
+* Delete products.
 * Create, update & delete there blog posts
 
 #### The Business potentials of this website are:
@@ -41,8 +42,9 @@ The Superuser is the only user that has full create update delete abilities with
 
 
 #### Visitors to this website are searching for:
-* Infomation on Honey bees and honey.
+* Information on Honey bees and honey.
 * Ability to learn about where there honey comes from.
+
 
 
 #### This Website is the best way to help them achieve these things because:
@@ -50,7 +52,7 @@ The Superuser is the only user that has full create update delete abilities with
 * The user is able to create a login.
 * The user can see there profile.
 * The user can see their past order history.
-* The site owner/admin can create, update, delete products.
+* The site owner/admin can create, update and delete products.
 
 
 #### This website is:
@@ -64,8 +66,8 @@ The Superuser is the only user that has full create update delete abilities with
 * Administarion pannel so superusers can add edit delete products.
 * Profile page where user can see there order history. 
 * All pages have the same navigation bar with logo to the left that onclick takes you home from any page, to the right 3 call to action buttons home,blog and if not logged in
-a login button, if logged in the users name as a droop down with accesss to profile and logout. If super user there is also an admin button. To the right of the dropdown
-there is the shopping basket thats icon changes depending if any items are placed in the shopping cart. There is also a footer with slogan, copyright and social media icons.
+a login button, if logged in the users name as a dropdown with accesss to profile and logout. If superuser there is also an admin button. To the right of the dropdown
+there is the shopping basket that's icon changes depending if any items are placed in the shopping cart. There is also a footer with slogan, copyright and social media icons.
 
 
 #### Home

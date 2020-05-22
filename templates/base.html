@@ -37,42 +37,42 @@
 </head>
 <body>
     <header class="container-fluid fixed-top">
-         <nav class="navbar navbar-expand-lg  background-navbar">
+        <nav class="navbar navbar-expand-lg  background-navbar">
             <a href="{% url 'home'%}"><img class="honey-pot-logo-image-navbar" src="{% static 'images/honey_pot.jpg' %}" alt="honeypotlogo"></a>
             <a class="logotext" href="{% url 'home'%}"><span class="logotext">The Honey Pot</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse nav-center" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{% url 'get_blogs' %}">Blog</a>
-            {% if request.user.is_authenticated %}
-                <div class="dropdown">
-                    <a class=" nav-link dropdown-toggle user-name" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{request.user.username}}
-                    </a>
-                    <div class="dropdown-menu drop-menu" aria-labelledby="dropdownMenuLink">
-                    {% if request.user.is_superuser %}
-                        <a class="nav-link dropdown-item" href="{% url 'all_products_admin' %}">Admin</a>
-                    {% endif %}
-                        <a class="nav-link dropdown-item" href="{% url 'user_profile' %}">Profile</a>
-                        <a class="nav-item nav-link" href="{% url 'account_logout' %}">logout</a>
-                    </div>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="{% url 'get_blogs' %}">Blog</a>
+                    {% if request.user.is_authenticated %}
+                        <div class="dropdown">
+                            <a class=" nav-link dropdown-toggle user-name" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{request.user.username}}
+                            </a>
+                            <div class="dropdown-menu drop-menu" aria-labelledby="dropdownMenuLink">
+                            {% if request.user.is_superuser %}
+                                <a class="nav-link dropdown-item" href="{% url 'all_products_admin' %}">Admin</a>
+                            {% endif %}
+                                <a class="nav-link dropdown-item" href="{% url 'user_profile' %}">Profile</a>
+                                <a class="nav-item nav-link" href="{% url 'account_logout' %}">logout</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a class="nav-item nav-link"  href="{% url 'account_login' %}">login</a>
+                        {% endif %}
+                        
+                        {% if cart %} 
+                        <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-cart-arrow-down"></i> = {{ product_count }}</a>   
+                        {% else %}
+                        <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a> 
+                        {% endif %}
+
                 </div>
-            {% else %}
-            <a class="nav-item nav-link"  href="{% url 'account_login' %}">login</a>
-            {% endif %}
-            
-            {% if cart %} 
-            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-cart-arrow-down"></i> = {{ product_count }}</a>   
-            {% else %}
-            <a class="nav-item nav-link" href="{% url 'cart_view' %}"><i class="fas fa-shopping-cart"></i></a> 
-            {% endif %}
-             
-        </div>
-  </div>
-</nav>
+            </div>
+        </nav>
     </header>
     {% if messages %}
     <div class="notifications">
